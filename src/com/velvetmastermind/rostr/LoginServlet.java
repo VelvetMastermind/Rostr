@@ -45,21 +45,20 @@ public class LoginServlet extends HttpServlet
 		DatastoreService ds = DatastoreServiceFactory.getDatastoreService(); 
 		Entity e = new Entity("user");
 		
-		Query q = new Query("user");
-		List<Entity> users = ds.prepare(q).asList(FetchOptions.Builder.withDefaults());
 		Query usernameCheck = new Query("user").setFilter(new Query.FilterPredicate("username", FilterOperator.EQUAL, username));
 		List<Entity> userCheck = ds.prepare(usernameCheck).asList(FetchOptions.Builder.withDefaults()); 
 		if(userCheck.isEmpty()){
 			foundError = true;
+		}else {
+			e = userCheck.get(0);
+			if(!password.equals(e.getProperty("password")))
+				foundError = true;
 		}
-		e = userCheck.get(0);
-		if(password != e.getProperty("password"))
-			foundError = true;
-		
-		
+			
 		if (foundError) {
-			resp.sendRedirect("LOGIN/LOGIN_error.html");
-		} else {
+			resp.sendRedirect("LOGIN/LOGIN_LandingERROR.html");
+		} 
+		else {
 			//
 			// TODO - Permissions handling
 			//
