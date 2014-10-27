@@ -5,15 +5,6 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
-		<servlet-name>Rostr</servlet-name>
-		<servlet-class>com.velvetmastermind.rostr.RostrServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Rostr</servlet-name>
-		<url-pattern>/rostr</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>com.velvetmastermind.rostr.LoginServlet</servlet-class>
 	</servlet>
