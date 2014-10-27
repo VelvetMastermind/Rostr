@@ -52,7 +52,7 @@ public class UpdateCoursesServlet extends HttpServlet
 				if(child.tagName().equals("span")){
 					className = child.html();
 				}
-				else if(child.tagName().equals("tr") && child.className().equals("body copy") && child.attr("bgcolor").equals("#F4F4F4")){
+				else if(child.tagName().equals("tr") && child.className().equals("body copy") && (child.attr("bgcolor").equals("#F4F4F4")||child.attr("bgcolor").equals("#ffffff"))){
 					Elements children = child.children();
 					instructor = children.get(8).html();
 					hours = children.get(5).html();
