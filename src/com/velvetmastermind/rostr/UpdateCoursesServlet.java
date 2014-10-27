@@ -7,6 +7,7 @@ import org.jsoup.examples.*;
 import org.jsoup.nodes.Node;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServlet;
@@ -26,16 +27,43 @@ public class UpdateCoursesServlet extends HttpServlet
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
+		String className = "";
+		String instructor = "";
+		String hours = "";
+		String room = "";
+		String units = "";
+		String section = "";
+		String days = "";
+		ArrayList<String> teachingAssistants = new ArrayList<String>(); 
+		Elements classes = new Elements();
+	
 		Document doc = Jsoup.connect("http://www4.uwm.edu/schedule/index.cfm?a1=subject_details&subject=COMPSCI&strm=2149").get();
-		Elements td = doc.getElementsByTag("table");
-		Elements useful = new Elements();
-		for(Element element : td){
-			String x = element.toString();
-			if(x.contains("COMPSCI")){
-				useful.add(element);
+		Elements table = doc.getElementsByTag("table");
+		
+		for(Element element : table){
+			String elementHTML = element.toString();
+			if(elementHTML.contains("COMPSCI")){
+				classes.add(element);
 			}
 		}
-		useful.remove(0);
-		td.clear();
+		classes.remove(0);
+		for(Element course : classes){
+			for(Element child : course.getAllElements()){
+				if(child.tagName().equals("span")){
+					className = child.html();
+				}
+				else if(child.tagName().equals("tr") && child.className().equals("body copy") && child.attr("bgcolor").equals("#F4F4F4")){
+					Elements children = child.children();
+					instructor = children.get(8).html();
+					hours = children.get(5).html();
+					room = children.get(9).html();
+					units = children.get(2).html();
+					section = children.get(3).html();
+					days = children.get(6).html();
+					int x = children.size();
+				}
+				
+			}
+		}
 	}
 }
