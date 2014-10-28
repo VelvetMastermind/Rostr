@@ -27,6 +27,7 @@ public class UpdateCoursesServlet extends HttpServlet
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
+		boolean isClass = false;
 		String className = "";
 		String instructor = "";
 		String hours = "";
@@ -34,7 +35,7 @@ public class UpdateCoursesServlet extends HttpServlet
 		String units = "";
 		String section = "";
 		String days = "";
-		ArrayList<String> teachingAssistants = new ArrayList<String>(); 
+		ArrayList<Course> parsedCourses = new ArrayList<Course>(); 
 		Elements classes = new Elements();
 	
 		Document doc = Jsoup.connect("http://www4.uwm.edu/schedule/index.cfm?a1=subject_details&subject=COMPSCI&strm=2149").get();
@@ -61,9 +62,14 @@ public class UpdateCoursesServlet extends HttpServlet
 					section = children.get(3).html();
 					days = children.get(6).html();
 					int x = children.size();
+					Course newCourse = new Course(className, instructor, hours, room, units, section, days);
+					if(section.indexOf("LEC") > -1)
+						newCourse.isClass = true;
+					parsedCourses.add(newCourse);
 				}
 				
 			}
 		}
+		
 	}
 }
