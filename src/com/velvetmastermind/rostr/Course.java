@@ -1,7 +1,5 @@
 package com.velvetmastermind.rostr;
 
-import java.util.ArrayList;
-
 public class Course {
 	boolean isClass = false;
 	private String className = "";

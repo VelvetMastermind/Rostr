@@ -1,14 +1,10 @@
 package com.velvetmastermind.rostr;
 import org.jsoup.Jsoup;
-import org.jsoup.parser.*;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
-import org.jsoup.examples.*;
-import org.jsoup.nodes.Node;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

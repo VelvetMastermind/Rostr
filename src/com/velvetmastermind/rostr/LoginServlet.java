@@ -1,18 +1,12 @@
 package com.velvetmastermind.rostr;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.google.appengine.api.datastore.Entity;
-import com.google.appengine.api.datastore.FetchOptions;
-import com.google.appengine.api.datastore.Query;
-import com.google.appengine.api.datastore.Query.FilterOperator;
 
 @SuppressWarnings("serial")
 public class LoginServlet extends HttpServlet
@@ -31,28 +25,28 @@ public class LoginServlet extends HttpServlet
 		//
 		// TODO - do login processing
 		//
-		String username = "";
-		username = req.getParameter("username");
-		String password = "";
-		password = req.getParameter("password");
+		String username = req.getParameter("username");
+		String password = req.getParameter("password");
 
 		boolean foundError = false;
+		boolean userExists = false;
 
-		if (username.length() == 0 || password.length() == 0) {
+		if (validUsername(username) || validPassword(password)) {
 			foundError = true;
 		}
 
-		DatastoreService ds = DatastoreServiceFactory.getDatastoreService(); 
-		Entity e = new Entity("user");
+		DatastoreService ds = rostrUtilities.getDatastore(); 
 		
-		Query usernameCheck = new Query("user").setFilter(new Query.FilterPredicate("username", FilterOperator.EQUAL, username));
-		List<Entity> userCheck = ds.prepare(usernameCheck).asList(FetchOptions.Builder.withDefaults()); 
-		if(userCheck.isEmpty()){
+		userExists = rostrUtilities.userExists(username, ds); 
+		if(!userExists)
+		{
 			foundError = true;
-		}else {
-			e = userCheck.get(0);
-			if(!password.equals(e.getProperty("password")))
-				foundError = true;
+			System.out.println("Username does not exist...");
+		}
+		else if(!password.equals(rostrUtilities.getPassword(username, ds)))
+		{
+			foundError = true;
+			System.out.println("Password is incorrect...");
 		}
 			
 		if (foundError) {
@@ -65,6 +59,39 @@ public class LoginServlet extends HttpServlet
 			//if(permissions == 1 || 2 || etc....) then redirect correctly...
 			resp.sendRedirect("ADMIN/ADMIN_Landing.html");
 		}
+	}
+	
+	private boolean validUsername(String sUsername) {
+		boolean bResult = false;
 		
+		try
+		{
+			bResult = true;
+			if(sUsername.length() == 0)
+				bResult = false;
+		}
+		catch(Exception ex)
+		{
+			System.out.println("LoginServlet(validUsername) exception.\n" + ex.getMessage());
+		}
+		
+		return bResult; 
+	}
+	
+	private boolean validPassword(String sPassword) {
+		boolean bResult = false;
+		
+		try
+		{
+			bResult = true;
+			if(sPassword.length() == 0)
+				bResult = false;
+		}
+		catch(Exception ex)
+		{
+			System.out.println("LoginServlet(validPassword) exception. \n" + ex.getMessage());
+		}
+		
+		return bResult; 
 	}
 }
