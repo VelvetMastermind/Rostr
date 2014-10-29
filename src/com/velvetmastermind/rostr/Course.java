@@ -23,6 +23,64 @@ public class Course {
 		this.section = section;
 		this.days = days;
 	}
-	
 
+    public String getClassName(){
+        return this.className;
+    }
+
+    public String getInstructor(){
+        return this.instructor;
+    }
+
+    public String getHours(){
+        return this.hours;
+    }
+
+    public boolean isClass() {
+        return isClass;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public String getUnits() {
+        return units;
+    }
+
+    public String getSection() {
+        return section;
+    }
+
+    public String getDays() {
+        return days;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
+    }
+
+    public void setHours(String hours) {
+        this.hours = hours;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
+    public void setUnits(String units) {
+        this.units = units;
+    }
+
+    public void setSection(String section) {
+        this.section = section;
+    }
+
+    public void setDays(String days) {
+        this.days = days;
+    }
 }

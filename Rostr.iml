@@ -18,7 +18,9 @@
       </configuration>
     </facet>
     <facet type="google-app-engine" name="Google App Engine">
-      <configuration />
+      <configuration>
+        <sdk-home-path>$USER_HOME$/Downloads/appengine-java-sdk-1.9.13</sdk-home-path>
+      </configuration>
     </facet>
     <facet type="jpa" name="JPA">
       <configuration>
