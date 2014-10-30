@@ -74,6 +74,8 @@ public class rostrUtilities {
     		
     		e.setProperty("username", sUsername);
             e.setProperty("password", sPassword);
+            if(iAccessLevel != 1 && iAccessLevel != 2 && iAccessLevel != 3)
+            	throw new IllegalStateException("Invalid access level!(" + iAccessLevel + ")");
             e.setProperty("accessLevel", iAccessLevel);
             ds.put(e);
             bResult = true;
