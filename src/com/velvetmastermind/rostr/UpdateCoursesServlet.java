@@ -47,7 +47,7 @@ public class UpdateCoursesServlet extends HttpServlet
 		classes.remove(0);
 		for(Element course : classes){
 			for(Element child : course.getAllElements()){
-				if(child.tagName().equals("span")){
+				if(child.tagName().equals("span") && child.className().equals("subhead")){
 					className = child.html();
 				}
 				else if(child.tagName().equals("tr") && child.className().equals("body copy") && (child.attr("bgcolor").equals("#F4F4F4")||child.attr("bgcolor").equals("#ffffff"))){
@@ -59,7 +59,7 @@ public class UpdateCoursesServlet extends HttpServlet
 					section = children.get(3).html();
 					days = children.get(6).html();
 					courseNumber = children.get(4).html();
-					Course newCourse = new Course(className, instructor, hours, room, units, section, days);
+					Course newCourse = new Course(className, instructor, hours, room, units, section, days, courseNumber);
 					if(section.indexOf("LEC") > -1)
 						newCourse.isClass = true;
 					parsedCourses.add(newCourse);
@@ -68,7 +68,7 @@ public class UpdateCoursesServlet extends HttpServlet
 			}
 		}
 		for(Course course : parsedCourses){
-			System.out.println(course.getClassName() + "\t" + course.getClassNumber() + "\t" + course.getDays() + "\t" + course.getHours() + "\t" + course.getInstructor() + "\t" + course.getRoom() + "\t" + course.getSection() + "\t" + course.getUnits() + "\t" + course.getClass());
+			System.out.println(course.getClassName() + "\t"+ "\t" + course.getClassNumber() + "\t"+ "\t" + course.getDays() + "\t"+ "\t" + course.getHours() + "\t"+ "\t" + course.getInstructor() + "\t"+ "\t" + course.getRoom() + "\t"+ "\t" + course.getSection() + "\t"+ "\t" + course.getUnits());
 		}
 		
 	}

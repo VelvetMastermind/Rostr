@@ -12,15 +12,18 @@ public class Course {
 	private String classNumber = "";
 	
 	public Course(String className, String instructor, String hours,
-			String room, String units, String section, String days) {
+			String room, String units, String section, String days, String classNumber) {
 		super();
 		this.className = className;
 		this.instructor = instructor;
 		this.hours = hours;
 		this.room = room;
+		if(units.contains("&nbsp;"))
+			units = "";
 		this.units = units;
 		this.section = section;
 		this.days = days;
+		this.classNumber = classNumber;
 	}
 	
 	public String getClassNumber(){
