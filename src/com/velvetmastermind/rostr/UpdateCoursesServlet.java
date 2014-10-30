@@ -3,6 +3,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 
+import com.google.appengine.api.datastore.Entity;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -67,8 +69,11 @@ public class UpdateCoursesServlet extends HttpServlet
 			}
 		}
 		for(Course course : parsedCourses){
+			Entity e = rostrUtilities.createEntity("course");
+			rostrUtilities.addCourseToDatastore(e, course);
 			System.out.println(course.toString());
 		}
+		rostrUtilities.redirect(resp, "/ADMIN/ADMIN_Classes.html");
 		
 	}
 }
