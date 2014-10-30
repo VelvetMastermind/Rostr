@@ -23,7 +23,6 @@ public class UpdateCoursesServlet extends HttpServlet
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
-		boolean isClass = false;
 		String className = "";
 		String instructor = "";
 		String hours = "";
@@ -68,7 +67,7 @@ public class UpdateCoursesServlet extends HttpServlet
 			}
 		}
 		for(Course course : parsedCourses){
-			System.out.println(course.getClassName() + "\t"+ "\t" + course.getClassNumber() + "\t"+ "\t" + course.getDays() + "\t"+ "\t" + course.getHours() + "\t"+ "\t" + course.getInstructor() + "\t"+ "\t" + course.getRoom() + "\t"+ "\t" + course.getSection() + "\t"+ "\t" + course.getUnits());
+			System.out.println(course.toString());
 		}
 		
 	}
