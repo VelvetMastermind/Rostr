@@ -37,13 +37,13 @@ public class LoginServlet extends HttpServlet
 
 		DatastoreService ds = rostrUtilities.getDatastore(); 
 		
-		userExists = rostrUtilities.userExists(username, ds); 
+		userExists = rostrUtilities.userExists(username); 
 		if(!userExists)
 		{
 			foundError = true;
 			System.out.println("Username does not exist...");
 		}
-		else if(!password.equals(rostrUtilities.getPassword(username, ds)))
+		else if(!password.equals(rostrUtilities.getPassword(username)))
 		{
 			foundError = true;
 			System.out.println("Password is incorrect...");

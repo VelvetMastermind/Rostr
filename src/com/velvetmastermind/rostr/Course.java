@@ -9,6 +9,7 @@ public class Course {
 	private String units = "";
 	private String section = "";
 	private String days = "";
+	private String classNumber = "";
 	
 	public Course(String className, String instructor, String hours,
 			String room, String units, String section, String days) {
@@ -21,7 +22,11 @@ public class Course {
 		this.section = section;
 		this.days = days;
 	}
-
+	
+	public String getClassNumber(){
+		return this.classNumber;
+	}
+	
     public String getClassName(){
         return this.className;
     }
@@ -52,6 +57,10 @@ public class Course {
 
     public String getDays() {
         return days;
+    }
+    
+    public void setClassNumber(String classNumber) {
+        this.className = classNumber;
     }
 
     public void setClassName(String className) {

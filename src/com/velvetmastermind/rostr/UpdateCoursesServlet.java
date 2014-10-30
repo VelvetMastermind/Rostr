@@ -31,6 +31,7 @@ public class UpdateCoursesServlet extends HttpServlet
 		String units = "";
 		String section = "";
 		String days = "";
+		String courseNumber = "";
 		ArrayList<Course> parsedCourses = new ArrayList<Course>(); 
 		Elements classes = new Elements();
 	
@@ -57,7 +58,7 @@ public class UpdateCoursesServlet extends HttpServlet
 					units = children.get(2).html();
 					section = children.get(3).html();
 					days = children.get(6).html();
-					int x = children.size();
+					courseNumber = children.get(4).html();
 					Course newCourse = new Course(className, instructor, hours, room, units, section, days);
 					if(section.indexOf("LEC") > -1)
 						newCourse.isClass = true;
@@ -65,6 +66,9 @@ public class UpdateCoursesServlet extends HttpServlet
 				}
 				
 			}
+		}
+		for(Course course : parsedCourses){
+			System.out.println(course.getClassName() + "\t" + course.getClassNumber() + "\t" + course.getDays() + "\t" + course.getHours() + "\t" + course.getInstructor() + "\t" + course.getRoom() + "\t" + course.getSection() + "\t" + course.getUnits() + "\t" + course.getClass());
 		}
 		
 	}
