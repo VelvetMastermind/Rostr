@@ -13,7 +13,7 @@ public class LoginServlet extends HttpServlet
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
 		//
-		// TOOD - do login (form display)
+		//
 		//
 	}
 
@@ -46,14 +46,14 @@ public class LoginServlet extends HttpServlet
 		}
 			
 		if (foundError) {
-			resp.sendRedirect("LOGIN/LOGIN_LandingERROR.html");
+			rostrUtilities.redirect(resp, "LOGIN/LOGIN_LandingERROR.html");
 		} 
 		else {
 			//
 			// TODO - Permissions handling
 			//
 			//if(permissions == 1 || 2 || etc....) then redirect correctly...
-			resp.sendRedirect("ADMIN/ADMIN_Landing.html");
+			rostrUtilities.redirect(resp, "ADMIN/ADMIN_Landing.html");
 		}
 	}
 	

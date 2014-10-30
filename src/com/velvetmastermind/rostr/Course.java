@@ -93,4 +93,5 @@ public class Course {
     public void setDays(String days) {
         this.days = days;
     }
+    
 }

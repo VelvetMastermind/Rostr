@@ -69,11 +69,11 @@ public class rostrUtilities {
     	
     	try
     	{
-    		userExists(sUsername);
+    		if(userExists(sUsername))
+    			throw new IllegalStateException("addUserToDatastore exception! user already exists..."); 
+    		
     		e.setProperty("username", sUsername);
             e.setProperty("password", sPassword);
-            if(iAccessLevel != 1 || iAccessLevel != 2 || iAccessLevel != 3)
-            	throw new IllegalStateException("Invalid access level!(" + iAccessLevel + ")");
             e.setProperty("accessLevel", iAccessLevel);
             ds.put(e);
             bResult = true;
