@@ -34,8 +34,6 @@ public class LoginServlet extends HttpServlet
 		if (!validUsername(username) || !validPassword(password)) {
 			foundError = true;
 		}
-
-		DatastoreService ds = rostrUtilities.getDatastore(); 
 		
 		userExists = rostrUtilities.userExists(username); 
 		if(!userExists)

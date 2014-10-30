@@ -33,7 +33,7 @@ public class rostrUtilities {
     	Query usernameCheck = new Query("user").setFilter(new Query.FilterPredicate("username", FilterOperator.EQUAL, sUsername));
         List<Entity> userCheck = ds.prepare(usernameCheck).asList(FetchOptions.Builder.withDefaults());
         if(!userCheck.isEmpty()) {
-            System.out.println("Admin has already been created...");
+            System.out.println("Found user " + sUsername + "!");
             bResult = true;
         }
     	
