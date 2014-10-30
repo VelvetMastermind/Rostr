@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet
 		boolean foundError = false;
 		boolean userExists = false;
 
-		if (validUsername(username) || validPassword(password)) {
+		if (!validUsername(username) || !validPassword(password)) {
 			foundError = true;
 		}
 
@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet
 		if(!userExists)
 		{
 			foundError = true;
-			System.out.println("Username does not exist...");
+			System.out.println("LoginServlet(doPost) Username does not exist...");
 		}
 		else if(!password.equals(rostrUtilities.getPassword(username, ds)))
 		{
@@ -67,8 +67,10 @@ public class LoginServlet extends HttpServlet
 		try
 		{
 			bResult = true;
-			if(sUsername.length() == 0)
+			if(sUsername.length() == 0) {
+				System.out.println("LoginServlet(validPassword) Invalid password...");
 				bResult = false;
+			}
 		}
 		catch(Exception ex)
 		{
@@ -84,8 +86,10 @@ public class LoginServlet extends HttpServlet
 		try
 		{
 			bResult = true;
-			if(sPassword.length() == 0)
+			if(sPassword.length() == 0) {
 				bResult = false;
+				System.out.println("LoginServlet(validPassword) Invalid password...");
+			}
 		}
 		catch(Exception ex)
 		{
