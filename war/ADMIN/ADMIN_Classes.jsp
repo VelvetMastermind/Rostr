@@ -6,6 +6,8 @@
 <%@ page import="com.google.appengine.api.datastore.KeyFactory" %>
 <%@ page import="com.google.appengine.api.datastore.Query" %>
 <%@ page import="com.velvetmastermind.rostr.*" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.google.appengine.api.datastore.PreparedQuery" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +71,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li><a class="nav_item" href="ADMIN_Landing.html">Dashboard</a></li>
-                <li class="active"><a class="nav_item" href="ADMIN_Classes.html">Classes</a></li>
+                <li class="active"><a class="nav_item" href="ADMIN_Classes.jsp">Classes</a></li>
                 <li><a class="nav_item" href="ADMIN_Contacts.html">Contacts</a></li>
             </ul>
         </div>
@@ -94,22 +96,29 @@
                         </thead>
                         <tbody>
                         <%
-                            DatastoreService datastore = DatastoreServiceFactor.getDataoreService();
-                        	Query gaeQuery = new Query(entityName);
+                            DatastoreService datastore = rostrUtilities.getDatastore();
+                        	Query gaeQuery = new Query("course");
 							PreparedQuery pq = datastore.prepare(gaeQuery);
-							List<Course> list = pq.asList(FetchOptions.Builder.withDefaults());
-							for(Course x : list){
-                                %> <tr><td> <% x.getClassName();%>
+							List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
+							for(Entity x : list){
+							 String className = (String)x.getProperty("className");
+								String section = (String)x.getProperty("section");
+								String hours = (String)x.getProperty("hours");
+								String days = (String)x.getProperty("days");
+								String instructor = (String)x.getProperty("instructor");
+								String room = (String)x.getProperty("room");
+							
+                                %> <tr><td> <%= className%>
                                 </td>
-                                <td> <% x.getSection();%>
+                                <td> <%= section%>
                                 </td>
-                                <td> <% x.getHours();%>
+                                <td> <%= hours%>
                                 </td>
-                                <td> <% x.getDays();%>
+                                <td> <%= days%>
                                 </td>
-                                <td> <% x.getInstructor();%>
+                                <td> <%= instructor%>
                                 </td>
-                                <td> <% x.getRoom();%>
+                                <td> <%= room%>
                                 </td>
                                 <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
                             <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
@@ -144,7 +153,7 @@
                 <h4 class="modal-title" id="myModalLabel">Add Class</h4>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" action="ADMIN_Classes.html">
+                <form role="form" method="POST" action="ADMIN_Classes.jsp">
                     <div class="form-group">
                         <label for="assignClassName">Class Name</label>
                         <input type="text" class="form-control" id="assignClassName" placeholder="Class Name">
@@ -194,7 +203,7 @@
                     <span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
             </div>
             <div class="modal-footer">
-                <form method="post" action="ADMIN_Classes.html">
+                <form method="post" action="ADMIN_Classes.jsp">
                     <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-ok-sign"></span>Yes</button>
                     <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                 </form>
