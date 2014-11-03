@@ -95,7 +95,36 @@ public class rostrUtilities {
 
 		return bResult;
 	}
+<<<<<<< HEAD
 
+=======
+	
+	public static boolean addUserToDatastore(Entity e, String sUsername, String sPassword, int iAccessLevel, DatastoreService ds) {
+    	boolean bResult = false;
+    	
+    	try
+    	{
+    		if(userExists(sUsername))
+    			throw new IllegalStateException("addUserToDatastore exception! user already exists..."); 
+    		
+    		e.setProperty("username", sUsername);
+            e.setProperty("password", sPassword);
+            if(iAccessLevel != 1 && iAccessLevel != 2 && iAccessLevel != 3)
+            	throw new IllegalStateException("Invalid access level!(" + iAccessLevel + ")");
+            e.setProperty("accessLevel", iAccessLevel);
+            ds.put(e);
+            bResult = true;
+    	}
+    	catch(Exception ex) 
+    	{
+    		System.out.println("rostrUtilities(addUserToDatastore) exception. Failed to add user to datastore...");
+    		System.out.println(ex.getMessage()); 
+    	}
+    	
+    	return bResult;
+    }
+	
+>>>>>>> FETCH_HEAD
 	public static boolean addCourseToDatastore(Entity e, Course course) {
 		boolean bResult = false;
 

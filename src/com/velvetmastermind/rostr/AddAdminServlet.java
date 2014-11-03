@@ -32,6 +32,11 @@ public class AddAdminServlet extends HttpServlet
 	        Entity e = rostrUtilities.createEntity("user"); 
 
 	        createdAdmin = rostrUtilities.addUserToDatastore(e, username, password, iAccessLevel, ds); 
+	        if(iAccessLevel != 1 && iAccessLevel != 2 && iAccessLevel != 3) 
+	        {
+	        	createdAdmin = false;
+	        	System.out.println("AddAdminServlet(doPost) INVALID ACCESS LEVEL!"); 
+	        }
 	        if(createdAdmin)
 	            resp.getWriter().println("Created administrator!");
 	        else

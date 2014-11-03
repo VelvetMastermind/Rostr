@@ -1,7 +1,7 @@
 package com.velvetmastermind.rostr;
 
 public class Course {
-	public boolean isClass = false;
+	boolean isClass = false;
 	private String className = "";
 	private String instructor = "";
 	private String hours = "";
@@ -94,7 +94,4 @@ public class Course {
         this.days = days;
     }
     
-    public String toString(){
-    	return this.getClassName() + "\t"+ "\t" + this.getClassNumber() + "\t"+ "\t" + this.getDays() + "\t"+ "\t" + this.getHours() + "\t"+ "\t" + this.getInstructor() + "\t"+ "\t" + this.getRoom() + "\t"+ "\t" + this.getSection() + "\t"+ "\t" + this.getUnits();
-    }
 }
