@@ -47,12 +47,12 @@ public class rostrUtilities {
 		boolean bResult = false;
 		DatastoreService ds = getDatastore();
 
-		Query usernameCheck = new Query("course")
+		Query courseCheck = new Query("course")
 				.setFilter(new Query.FilterPredicate("courseNumber",
 						FilterOperator.EQUAL, courseNumber));
-		List<Entity> userCheck = ds.prepare(usernameCheck).asList(
+		List<Entity> courseCheck = ds.prepare(courseCheck).asList(
 				FetchOptions.Builder.withDefaults());
-		if (!userCheck.isEmpty()) {
+		if (!courseCheck.isEmpty()) {
 			System.out.println("Course already exists");
 			bResult = true;
 		}
@@ -116,7 +116,7 @@ public class rostrUtilities {
 			bResult = true;
 		} catch (Exception ex) {
 			System.out
-					.println("rostrUtilities(addUserToDatastore) exception. Failed to add user to datastore...");
+					.println("rostrUtilities(addCourseToDatastore) exception. Failed to add course to datastore...");
 			System.out.println(ex.getMessage());
 		}
 
