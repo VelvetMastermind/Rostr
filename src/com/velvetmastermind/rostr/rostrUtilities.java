@@ -50,9 +50,9 @@ public class rostrUtilities {
 		Query courseCheck = new Query("course")
 				.setFilter(new Query.FilterPredicate("courseNumber",
 						FilterOperator.EQUAL, courseNumber));
-		List<Entity> courseCheck = ds.prepare(courseCheck).asList(
+		List<Entity> courseCheckList = ds.prepare(courseCheck).asList(
 				FetchOptions.Builder.withDefaults());
-		if (!courseCheck.isEmpty()) {
+		if (!courseCheckList.isEmpty()) {
 			System.out.println("Course already exists");
 			bResult = true;
 		}
