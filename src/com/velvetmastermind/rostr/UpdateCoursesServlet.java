@@ -89,7 +89,7 @@ public class UpdateCoursesServlet extends HttpServlet {
 							Course newCourse = new Course(className,
 									instructor, hours, room, units, section,
 									days, courseNumber);
-							if (section.indexOf("LEC") > -1) {
+							if (section.indexOf("LEC") > -1 || section.indexOf("IND") > -1) {
 								newCourse.isClass = true;
 							}
 							else{
