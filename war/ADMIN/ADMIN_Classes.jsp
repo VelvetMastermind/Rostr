@@ -72,7 +72,7 @@
             <ul class="nav nav-sidebar">
                 <li><a class="nav_item" href="ADMIN_Landing.html">Dashboard</a></li>
                 <li class="active"><a class="nav_item" href="ADMIN_Classes.jsp">Classes</a></li>
-                <li><a class="nav_item" href="ADMIN_Contacts.html">Contacts</a></li>
+                <!--<li><a class="nav_item" href="ADMIN_Contacts.html">Contacts</a></li>-->
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -197,7 +197,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">��</button>
                 <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
             </div>
             <div class="modal-body">
