@@ -90,8 +90,10 @@
                             <th>Days</th>
                             <th>Instructor</th>
                             <th>Room</th>
+                            <!-- EDIT/DELETE NOT SUPPORTED IN SPRINT 1
                             <th>Edit</th>
                             <th>Delete</th>
+                            -->
                         </tr>
                         </thead>
                         <tbody>
@@ -120,8 +122,9 @@
                                 </td>
                                 <td> <%= room%>
                                 </td>
-                                <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                            <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                <!-- Edit/Delete NOT SUPPORTED IN SPRINT 1 -->
+                                <%--<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>--%>
+                            <%--<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>--%>
                           <%  }
 						%>
                        <!-- NOT SUPPORTED IN SPRINT 1 
