@@ -18,7 +18,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../assests/favicon.ico">
 
-    <title>UWM - Contacts</title>
+    <title>UWM - Courses</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <!-- My Profile not supported in Sprint 1
+                        <!-- My Profile not supported in Sprint 2
                         <li><a href="#">My Profile</a></li>
                         <li class="divider"></li>
                         -->
@@ -57,7 +57,7 @@
                     </ul>
                 </li>
             </ul>
-            <!-- Search not supported in Sprint 1
+            <!-- Search not supported in Sprint 2
             <form class="navbar-form navbar-right">
                 <input type="text" class="form-control" placeholder="Search...">
             </form>
@@ -71,7 +71,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li><a class="nav_item" href="ADMIN_Landing.html">Dashboard</a></li>
-                <li class="active"><a class="nav_item" href="ADMIN_Classes.jsp">Classes</a></li>
+                <li class="active"><a class="nav_item" href="ADMIN_Classes.jsp">Courses</a></li>
                 <!--<li><a class="nav_item" href="ADMIN_Contacts.html">Contacts</a></li>-->
             </ul>
         </div>
@@ -79,7 +79,7 @@
             <div class="panel panel-default">
                 <div class="table-responsive">
                     <div class="panel-heading">
-                        <h1>Classes</h1>
+                        <h1>Courses</h1>
                     </div>
                     <table class="table table-striped sortable">
                         <thead>
@@ -103,12 +103,12 @@
 							PreparedQuery pq = datastore.prepare(gaeQuery);
 							List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
 							for(Entity x : list){
-							 String className = (String)x.getProperty("className");
-								String section = (String)x.getProperty("section");
-								String hours = (String)x.getProperty("hours");
-								String days = (String)x.getProperty("days");
-								String instructor = (String)x.getProperty("instructor");
-								String room = (String)x.getProperty("room");
+                                String className = (String)x.getProperty("className");
+                                String section = (String)x.getProperty("section");
+                                String hours = (String)x.getProperty("hours");
+                                String days = (String)x.getProperty("days");
+                                String instructor = (String)x.getProperty("instructor");
+                                String room = (String)x.getProperty("room");
 							
                                 %> <tr><td> <%= className%>
                                 </td>
@@ -122,12 +122,12 @@
                                 </td>
                                 <td> <%= room%>
                                 </td>
-                                <!-- Edit/Delete NOT SUPPORTED IN SPRINT 1 -->
-                                <%--<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>--%>
-                            <%--<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>--%>
+                                <!-- Edit/Delete Buttons -->
+                                <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
                           <%  }
 						%>
-                       <!-- NOT SUPPORTED IN SPRINT 1 
+                       <!-- NOT SUPPORTED IN SPRINT 2
                        <tr class="add_class">
                             <td><a href="#" class="add_class" data-toggle="modal" data-target="#myModal">ADD CLASS <span class="glyphicon glyphicon-plus"></span> </a></td>
                             <td></td>
@@ -147,18 +147,18 @@
     </div>
 </div>
 
-<!-- Add Class Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- EDIT Class Modal -->
+<div class="modal fade" id="editCourse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add Class</h4>
+                <h4 class="modal-title" id="myModalLabel">Edit Course</h4>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" action="ADMIN_Classes.jsp">
+                <form role="form" method="POST" action="/doEditCourse">
                     <div class="form-group">
-                        <label for="assignClassName">Class Name</label>
+                        <label for="assignClassName">Course Name</label>
                         <input type="text" class="form-control" id="assignClassName" placeholder="Class Name">
                     </div>
                     <div class="form-group">
