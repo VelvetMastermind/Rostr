@@ -4,6 +4,7 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+    <!-- Login Servlet -->
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>com.velvetmastermind.rostr.LoginServlet</servlet-class>
@@ -11,6 +12,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/doLogin</url-pattern>
+	</servlet-mapping>
+	<!-- Add New User Servlet -->
+	<servlet>
+		<servlet-name>AddNewUserServlet</servlet-name>
+		<servlet-class>com.velvetmastermind.rostr.AddNewUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddNewUserServlet</servlet-name>
+		<url-pattern>/doAddNewUser</url-pattern>
 	</servlet-mapping>
     <!-- AddAdminServlet used only in early stages of development to create an administrator account -->
     <servlet>
@@ -21,6 +31,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
         <servlet-name>AddAdminServlet</servlet-name>
         <url-pattern>/doAddAdmin</url-pattern>
     </servlet-mapping>
+    <!--Update Courses Servlet -->
 	<servlet>
 		<servlet-name>UpdateCoursesServlet</servlet-name>
 		<servlet-class>com.velvetmastermind.rostr.UpdateCoursesServlet</servlet-class>
@@ -29,7 +40,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>UpdateCoursesServlet</servlet-name>
 		<url-pattern>/doUpdateCourses</url-pattern>
 	</servlet-mapping>
+	<!-- Main Landing Page (LOGIN) -->
 	<welcome-file-list>
-		<welcome-file>LOGIN/LOGIN_Landing.html</welcome-file>
+		<welcome-file>LOGIN/LOGIN_Landing.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>

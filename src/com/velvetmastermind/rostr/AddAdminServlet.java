@@ -15,7 +15,7 @@ public class AddAdminServlet extends HttpServlet
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException
     {
-    	rostrUtilities.redirect(resp, "LOGIN/LOGIN_Landing.html");
+    	rostrUtilities.redirect(resp, "LOGIN/LOGIN_Landing.jsp");
     }
 
     @Override
@@ -45,7 +45,7 @@ public class AddAdminServlet extends HttpServlet
     	}
     	catch(Exception ex){
     		System.out.println("AddAdminServlet(doPost) exception.");
-    		rostrUtilities.redirect(resp, "LOGIN/LOGIN_LandingERROR.html");
+    		rostrUtilities.redirect(resp, "LOGIN/LOGIN_LandingERROR.jsp");
     	}
     }
     

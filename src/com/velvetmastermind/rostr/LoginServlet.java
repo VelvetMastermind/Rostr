@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet
 			// TODO - Permissions handling
 			//
 			//if(permissions == 1 || 2 || etc....) then redirect correctly...
-			rostrUtilities.redirect(resp, "ADMIN/ADMIN_Landing.html");
+			rostrUtilities.redirect(resp, "ADMIN/ADMIN_Landing.jsp");
 		}
 	}
 	
