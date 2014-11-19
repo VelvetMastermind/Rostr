@@ -25,6 +25,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/dashboard.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom font for Rostr logo -->
     <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
@@ -72,7 +73,7 @@
             <ul class="nav nav-sidebar">
                 <li><a class="nav_item" href="ADMIN_Landing.jsp">Dashboard</a></li>
                 <li class="active"><a class="nav_item" href="ADMIN_Classes.jsp">Courses</a></li>
-                <!--<li><a class="nav_item" href="ADMIN_Contacts.html">Contacts</a></li>-->
+                <li><a class="nav_item" href="ADMIN_Contacts.jsp">Contacts</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -107,8 +108,10 @@
                                 String days = (String)x.getProperty("days");
                                 String instructor = (String)x.getProperty("instructor");
                                 String room = (String)x.getProperty("room");
+                                String courseNumber = (String)x.getProperty("courseNumber");
 							
-                                %> <tr><td> <%= className%>
+                                %>
+                                <tr><td> <%= className%>
                                 </td>
                                 <td> <%= section%>
                                 </td>
@@ -121,8 +124,8 @@
                                 <td> <%= room%>
                                 </td>
                                 <!-- Edit/Delete Buttons -->
-                                <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#editCourse" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                <td><p><button class="btn btn-primary btn-xs" id='<%= courseNumber + "EDIT"%>' data-title="Edit" data-toggle="modal" data-target="#editCourse" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                <td><p><button class="btn btn-danger btn-xs" id='<%= courseNumber + "DELETE"%>' data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
                           <%  }
 						%>
                        <!-- NOT SUPPORTED IN SPRINT 2
@@ -180,7 +183,7 @@
                         <input type="text" class="form-control" id="assignRoom" placeholder="Section">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close <span class="fa-close"></span></button>
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </form>
@@ -195,7 +198,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">��</button>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
             </div>
             <div class="modal-body">

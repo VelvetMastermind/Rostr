@@ -25,6 +25,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/dashboard.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for Large Nav buttons -->
     <link href="../css/largeNav.css" rel="stylesheet">
@@ -52,7 +53,7 @@
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <!-- My Profile not supported in Sprint 1
+                        <!-- My Profile not supported in Sprint 2
                         <li><a href="#">My Profile</a></li>
                         <li class="divider"></li>
                         -->
@@ -60,7 +61,7 @@
                     </ul>
                 </li>
             </ul>
-            <!-- Search not supported in Sprint 1
+            <!-- Search not supported in Sprint 2
             <form class="navbar-form navbar-right">
                 <input type="text" class="form-control" placeholder="Search...">
             </form>
@@ -74,10 +75,8 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li class="active"><a class="nav_item" href="ADMIN_Landing.jsp">Dashboard</a></li>
-                <li><a class="nav_item" href="ADMIN_Classes.jsp">Classes</a></li>
-                <!-- CONTACTS NOT SUPPORTED IN SPRINT 1
-                <li><a class="nav_item" href="ADMIN_Contacts.html">Contacts</a></li>
-                -->
+                <li><a class="nav_item" href="ADMIN_Classes.jsp">Courses</a></li>
+                <li><a class="nav_item" href="ADMIN_Contacts.jsp">Contacts</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -85,36 +84,34 @@
             <div class="text-center">
                 <div class="row">
                     <form class="form-group" method="POST" action="ADMIN_Landing.jsp" id="actionButtons">
-                        <button formaction="ADMIN_Classes.jsp"  class="btn btn-xlarge" >Courses <span class="glyphicon glyphicon-th-list"></span> </button>
-                        <!-- CONTACTS NOT SUPPORTED IN SPRINT 1
-                        <button formaction="ADMIN_Contacts.html"  class="btn btn-xlarge" />Contacts <span class="glyphicon glyphicon-user"></span> </button>
-                        -->
+                        <button formaction="ADMIN_Classes.jsp"  class="btn btn-xlarge">Courses <span class="glyphicon glyphicon-th-list"></span> </button>
+                        <button formaction="ADMIN_Contacts.jsp"  class="btn btn-xlarge">Contacts <span class="glyphicon glyphicon-user"></span> </button>
                         <button formaction="/doUpdateCourses" type="submit"  class="btn btn-xlarge" data-target="#processingModal">Update<br>Courses<br><span class="glyphicon glyphicon-retweet"></span></button>
                     </form>
                 </div>
             </div>
         </div>
 
-        <!-- Processing Modal -->
-        <div class="modal fade" id="processingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                        <div class="modal-header">
-                            <h1>Processing...</h1>
+<!-- Processing Modal -->
+<div class="modal fade" id="processingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Processing...</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                            <span class="sr-only">100% Complete</span>
                         </div>
-                        <div class="modal-body">
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                    <span class="sr-only">100% Complete</span>
-                                </div>
-                            </div>
-                        </div>
-                        </form>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
-     </div>
+    </div>
+</div>
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

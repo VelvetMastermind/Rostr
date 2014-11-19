@@ -73,7 +73,7 @@ public class rostrUtilities {
 		return (String) e.getProperty("password");
 	}
 
-	public static boolean addUserToDatastore(Entity e, String sUsername, String sPassword, int iAccessLevel, DatastoreService ds) {
+	public static boolean addUserToDatastore(Entity e, String sUsername, String sPassword, String pantherID, String roomNumber, String phoneNumber, String officeHours, int iAccessLevel, DatastoreService ds) {
     	boolean bResult = false;
     	
     	try
@@ -83,7 +83,11 @@ public class rostrUtilities {
     		
     		e.setProperty("username", sUsername);
             e.setProperty("password", sPassword);
-            if(iAccessLevel != 1 && iAccessLevel != 2 && iAccessLevel != 3)
+            e.setProperty("pantherID", pantherID);
+            e.setProperty("roomNumber", roomNumber);
+            e.setProperty("phoneNumber", phoneNumber);
+            e.setProperty("officeHours", officeHours); 
+            if(iAccessLevel != -1 && iAccessLevel != 1 && iAccessLevel != 2 && iAccessLevel != 3)
             	throw new IllegalStateException("Invalid access level!(" + iAccessLevel + ")");
             e.setProperty("accessLevel", iAccessLevel);
             ds.put(e);
