@@ -44,11 +44,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="ADMIN_Landing.html">Rostr</a>
+            <a class="navbar-brand" href="ADMIN_Landing.jsp">Rostr</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="ADMIN_Landing.html">Dashboard</a></li>
+                <li><a href="ADMIN_Landing.jsp">Dashboard</a></li>
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -56,7 +56,7 @@
                         <li><a href="#">My Profile</a></li>
                         <li class="divider"></li>
                         -->
-                        <li><a href="../LOGIN/LOGIN_Landing.html">Logout <span class="glyphicon glyphicon-off"></span></a></li>
+                        <li><a href="../LOGIN/LOGIN_Landing.jsp">Logout <span class="glyphicon glyphicon-off"></span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -73,7 +73,7 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a class="nav_item" href="ADMIN_Landing.html">Dashboard</a></li>
+                <li class="active"><a class="nav_item" href="ADMIN_Landing.jsp">Dashboard</a></li>
                 <li><a class="nav_item" href="ADMIN_Classes.jsp">Classes</a></li>
                 <!-- CONTACTS NOT SUPPORTED IN SPRINT 1
                 <li><a class="nav_item" href="ADMIN_Contacts.html">Contacts</a></li>
@@ -84,12 +84,12 @@
             <h1 class="sub-header text-center">Welcome, Admin</h1>
             <div class="text-center">
                 <div class="row">
-                    <form class="form-group" method="POST" action="ADMIN_Landing.html" id="actionButtons">
-                        <button formaction="ADMIN_Classes.jsp"  class="btn btn-xlarge" />Courses <span class="glyphicon glyphicon-th-list"></span> </button>
+                    <form class="form-group" method="POST" action="ADMIN_Landing.jsp" id="actionButtons">
+                        <button formaction="ADMIN_Classes.jsp"  class="btn btn-xlarge" >Courses <span class="glyphicon glyphicon-th-list"></span> </button>
                         <!-- CONTACTS NOT SUPPORTED IN SPRINT 1
                         <button formaction="ADMIN_Contacts.html"  class="btn btn-xlarge" />Contacts <span class="glyphicon glyphicon-user"></span> </button>
                         -->
-                        <button formaction="/doUpdateCourses" type="submit"  class="btn btn-xlarge" data-target="#processingModal"/>Update<br>Courses<br><span class="glyphicon glyphicon-retweet"></span></button>
+                        <button formaction="/doUpdateCourses" type="submit"  class="btn btn-xlarge" data-target="#processingModal">Update<br>Courses<br><span class="glyphicon glyphicon-retweet"></span></button>
                     </form>
                 </div>
             </div>
@@ -116,14 +116,14 @@
         </div>
      </div>
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
-        <script src="../../assets/js/docs.min.js"></script>
-        <!-- Sortable JS -->
-        <script src="../js/sorttable.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <!-- Sortable JS -->
+    <script src="../js/sorttable.js"></script>
 </body>
 </html>

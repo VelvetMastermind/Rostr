@@ -43,7 +43,7 @@
                         <label for='email' class='sr-only'>Email address</label>
                         <div class='input-group'>
                             <span class='input-group-addon'><span class='glyphicon glyphicon-user'></span></span>
-                            <input type='username' class='form-control' id='username' name='username'
+                            <input type='text' class='form-control' id='username' name='username'
                                    placeholder='ePantherID' required autocomplete="on">
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                     <div class="form-group">
                         <label for="officeHours">Office Hours</label>
                         <input type="text" class="form-control" id="officeHours" placeholder="Office Hours (separate by colon)">
-                        <label><small>In format of : 2:00PM-3:00PM MWF;9:00AM-10:00AM</small></label>
+                        <label><small>In format of : 2:00PM-3:00PM MWF;9:00AM-10:00AM MW</small></label>
                     </div>
                     <input type='submit' class='btn btn-success btn-sm' value='Submit'/>
                 </form>

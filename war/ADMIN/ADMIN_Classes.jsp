@@ -41,11 +41,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="ADMIN_Landing.html">Rostr</a>
+            <a class="navbar-brand" href="ADMIN_Landing.jsp">Rostr</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="ADMIN_Landing.html">Dashboard</a></li>
+                <li><a href="ADMIN_Landing.jsp">Dashboard</a></li>
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -53,7 +53,7 @@
                         <li><a href="#">My Profile</a></li>
                         <li class="divider"></li>
                         -->
-                        <li><a href="../LOGIN/LOGIN_Landing.html">Logout <span class="glyphicon glyphicon-off"></span></a></li>
+                        <li><a href="../LOGIN/LOGIN_Landing.jsp">Logout <span class="glyphicon glyphicon-off"></span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -70,7 +70,7 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li><a class="nav_item" href="ADMIN_Landing.html">Dashboard</a></li>
+                <li><a class="nav_item" href="ADMIN_Landing.jsp">Dashboard</a></li>
                 <li class="active"><a class="nav_item" href="ADMIN_Classes.jsp">Courses</a></li>
                 <!--<li><a class="nav_item" href="ADMIN_Contacts.html">Contacts</a></li>-->
             </ul>
@@ -90,10 +90,8 @@
                             <th>Days</th>
                             <th>Instructor</th>
                             <th>Room</th>
-                            <!-- EDIT/DELETE NOT SUPPORTED IN SPRINT 1
                             <th>Edit</th>
                             <th>Delete</th>
-                            -->
                         </tr>
                         </thead>
                         <tbody>
@@ -123,7 +121,7 @@
                                 <td> <%= room%>
                                 </td>
                                 <!-- Edit/Delete Buttons -->
-                                <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#editCourse" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
                                 <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
                           <%  }
 						%>
