@@ -91,6 +91,7 @@
                             <th>Days</th>
                             <th>Instructor</th>
                             <th>Room</th>
+                            <th>Course Number</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -122,6 +123,8 @@
                                 <td> <%= instructor%>
                                 </td>
                                 <td> <%= room%>
+                                </td>
+                                <td> <%= courseNumber%>
                                 </td>
                                 <!-- Edit/Delete Buttons -->
                                 <td><p><button class="btn btn-primary btn-xs" id='<%= courseNumber + "EDIT"%>' data-title="Edit" data-toggle="modal" data-target="#editCourse" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
@@ -160,27 +163,31 @@
                 <form role="form" method="POST" action="/doEditCourse">
                     <div class="form-group">
                         <label for="assignClassName">Course Name</label>
-                        <input type="text" class="form-control" id="assignClassName" placeholder="Class Name">
+                        <input type="text" class="form-control" name="assignClassName" id="assignClassName" placeholder="COMPSCI-361: Intro to Software Engineering">
                     </div>
                     <div class="form-group">
                         <label for="assignSection">Section</label>
-                        <input type="text" class="form-control" id="assignSection" placeholder="Section">
+                        <input type="text" class="form-control" name="assignSection" id="assignSection" placeholder="401">
                     </div>
                     <div class="form-group">
                         <label for="assignTime">Time</label>
-                        <input type="text" class="form-control" id="assignTime" placeholder="Section">
+                        <input type="text" class="form-control" name="assignTime" id="assignTime" placeholder="1:00 PM-2:50 PM">
                     </div>
                     <div class="form-group">
                         <label for="assignDays">Days</label>
-                        <input type="text" class="form-control" id="assignDays" placeholder="Section">
+                        <input type="text" class="form-control" name="assignDays" id="assignDays" placeholder="TWR">
                     </div>
                     <div class="form-group">
                         <label for="assignInstructor">Instructor</label>
-                        <input type="text" class="form-control" id="assignInstructor" placeholder="Instructor"/>
+                        <input type="text" class="form-control" name="assignInstructor" id="assignInstructor" placeholder="Jayson Rock"/>
                     </div>
                     <div class="form-group">
                         <label for="assignRoom">Room</label>
-                        <input type="text" class="form-control" id="assignRoom" placeholder="Section">
+                        <input type="text" class="form-control" name="assignRoom" id="assignRoom" placeholder="EMS E160">
+                    </div>
+                    <div class="form-group">
+                        <label for="assignCourseNumber">Course Number</label>
+                        <input type="text" class="form-control" name="assignNumber" id="assignNumber" placeholder="40581">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close <span class="fa-close"></span></button>

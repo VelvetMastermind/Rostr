@@ -115,6 +115,7 @@ public class rostrUtilities {
 				e.setProperty("units", course.getUnits());
 				e.setProperty("section", course.getSection());
 				e.setProperty("days", course.getDays());
+				e.setProperty("courseNumber", course.getClassNumber());
 				ds.put(e);
 			}
 			bResult = true;
