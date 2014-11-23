@@ -209,25 +209,33 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title custom_align" id="Heading">Delete Course</h4>
             </div>
             <div class="modal-body">
-                <div class="alert alert-warning">
-                    <span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
+                <form role="form" method="post" action='/doDeleteCourse'>
+                    <div class="alert alert-warning">
+                        <span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this
+                        Record?
+                    </div>
+
+                    <div class='form-group'>
+                        This action <b>CANNOT</b> be undone. This will permanently delete the course.
+                        <br/>
+                        Please type in the course number to confirm.
+                        <br/>
+                        <input type="text" class="form-control" name="confirmDelete" id="confirmDelete"
+                               placeholder="Course Number">
+                    </div>
+                    <div class="modal-footer"></div>
+                    <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-ok-sign"></span>Yes
+                    </button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal"><span
+                            class="glyphicon glyphicon-remove"></span> No
+                    </button>
+                </form>
             </div>
-            <form method="post" action='/doDeleteCourse'>
-                <div class='form-group'>
-                    This action <b>CANNOT</b> be undone. This will permanently delete the course.
-                    <br/>
-                    Please type in the name of the repository to confirm.
-                    <input type='text' class="form-control" name="confirmDelete" id="confirmDelete" placeholder="Course Number">
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-ok-sign"></span>Yes</button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
-                </div>
-            </form>
         </div>
     </div>
 </div>

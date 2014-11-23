@@ -54,7 +54,8 @@
                         <li><a href="#">My Profile</a></li>
                         <li class="divider"></li>
                         -->
-                        <li><a href="../LOGIN/LOGIN_Landing.jsp">Logout <span class="glyphicon glyphicon-off"></span></a></li>
+                        <li><a href="../LOGIN/LOGIN_Landing.jsp">Logout <span
+                                class="glyphicon glyphicon-off"></span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -99,50 +100,65 @@
                         <tbody>
                         <%
                             DatastoreService datastore = rostrUtilities.getDatastore();
-                        	Query gaeQuery = new Query("course");
-							PreparedQuery pq = datastore.prepare(gaeQuery);
-							List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
-							for(Entity x : list){
-                                String className = (String)x.getProperty("className");
-                                String section = (String)x.getProperty("section");
-                                String hours = (String)x.getProperty("hours");
-                                String days = (String)x.getProperty("days");
-                                String instructor = (String)x.getProperty("instructor");
-                                String room = (String)x.getProperty("room");
-                                String courseNumber = (String)x.getProperty("courseNumber");
-							
-                                %>
-                                <tr><td> <%= className%>
-                                </td>
-                                <td> <%= section%>
-                                </td>
-                                <td> <%= hours%>
-                                </td>
-                                <td> <%= days%>
-                                </td>
-                                <td> <%= instructor%>
-                                </td>
-                                <td> <%= room%>
-                                </td>
-                                <td> <%= courseNumber%>
-                                </td>
-                                <!-- Edit/Delete Buttons -->
-                                <td><p><button class="btn btn-primary btn-xs" id='<%= courseNumber + "EDIT"%>' data-title="Edit" data-toggle="modal" data-target="#editCourse" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                <td><p><button class="btn btn-danger btn-xs" id='<%= courseNumber + "DELETE"%>' data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                          <%  }
+                            Query gaeQuery = new Query("course");
+                            PreparedQuery pq = datastore.prepare(gaeQuery);
+                            List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
+                            for (Entity x : list) {
+                                String className = (String) x.getProperty("className");
+                                String section = (String) x.getProperty("section");
+                                String hours = (String) x.getProperty("hours");
+                                String days = (String) x.getProperty("days");
+                                String instructor = (String) x.getProperty("instructor");
+                                String room = (String) x.getProperty("room");
+                                String courseNumber = (String) x.getProperty("courseNumber");
+
+                        %>
+                        <tr>
+                            <td><%= className%>
+                            </td>
+                            <td><%= section%>
+                            </td>
+                            <td><%= hours%>
+                            </td>
+                            <td><%= days%>
+                            </td>
+                            <td><%= instructor%>
+                            </td>
+                            <td><%= room%>
+                            </td>
+                            <td><%= courseNumber%>
+                            </td>
+                            <!-- Edit/Delete Buttons -->
+                            <td>
+                                <p>
+                                    <button class="btn btn-primary btn-xs" id='<%= courseNumber + "EDIT"%>'
+                                            data-title="Edit" data-toggle="modal" data-target="#editCourse"
+                                            data-placement="top" rel="tooltip"><span
+                                            class="glyphicon glyphicon-pencil"></span></button>
+                                </p>
+                            </td>
+                            <td>
+                                <p>
+                                    <button class="btn btn-danger btn-xs" id='<%= courseNumber + "DELETE"%>'
+                                            data-title="Delete" data-toggle="modal" data-target="#delete"
+                                            data-placement="top" rel="tooltip"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </p>
+                            </td>
+                                <%  }
 						%>
-                       <!-- NOT SUPPORTED IN SPRINT 2
-                       <tr class="add_class">
-                            <td><a href="#" class="add_class" data-toggle="modal" data-target="#myModal">ADD CLASS <span class="glyphicon glyphicon-plus"></span> </a></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        -->
+                            <!-- NOT SUPPORTED IN SPRINT 2
+                            <tr class="add_class">
+                                 <td><a href="#" class="add_class" data-toggle="modal" data-target="#myModal">ADD CLASS <span class="glyphicon glyphicon-plus"></span> </a></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                             </tr>
+                             -->
                         </tbody>
                     </table>
                 </div>
@@ -156,22 +172,26 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel">Edit Course</h4>
             </div>
             <div class="modal-body">
                 <form role="form" method="POST" action="/doEditCourse">
                     <div class="form-group">
                         <label for="assignClassName">Course Name</label>
-                        <input type="text" class="form-control" name="assignClassName" id="assignClassName" placeholder="COMPSCI-361: Intro to Software Engineering">
+                        <input type="text" class="form-control" name="assignClassName" id="assignClassName"
+                               placeholder="COMPSCI-361: Intro to Software Engineering">
                     </div>
                     <div class="form-group">
                         <label for="assignSection">Section</label>
-                        <input type="text" class="form-control" name="assignSection" id="assignSection" placeholder="401">
+                        <input type="text" class="form-control" name="assignSection" id="assignSection"
+                               placeholder="401">
                     </div>
                     <div class="form-group">
                         <label for="assignTime">Time</label>
-                        <input type="text" class="form-control" name="assignTime" id="assignTime" placeholder="1:00 PM-2:50 PM">
+                        <input type="text" class="form-control" name="assignTime" id="assignTime"
+                               placeholder="1:00 PM-2:50 PM">
                     </div>
                     <div class="form-group">
                         <label for="assignDays">Days</label>
@@ -179,11 +199,13 @@
                     </div>
                     <div class="form-group">
                         <label for="assignInstructor">Instructor</label>
-                        <input type="text" class="form-control" name="assignInstructor" id="assignInstructor" placeholder="Jayson Rock"/>
+                        <input type="text" class="form-control" name="assignInstructor" id="assignInstructor"
+                               placeholder="Jayson Rock"/>
                     </div>
                     <div class="form-group">
                         <label for="assignRoom">Room</label>
-                        <input type="text" class="form-control" name="assignRoom" id="assignRoom" placeholder="EMS E160">
+                        <input type="text" class="form-control" name="assignRoom" id="assignRoom"
+                               placeholder="EMS E160">
                     </div>
                     <div class="form-group">
                         <label for="assignUnits">Units</label>
@@ -191,10 +213,12 @@
                     </div>
                     <div class="form-group">
                         <label for="assignCourseNumber">Course Number</label>
-                        <input type="text" class="form-control" name="assignNumber" id="assignNumber" placeholder="40581">
+                        <input type="text" class="form-control" name="assignNumber" id="assignNumber"
+                               placeholder="40581">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close <span class="fa-close"></span></button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close <span
+                                class="fa-close"></span></button>
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </form>
@@ -209,31 +233,38 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title custom_align" id="Heading">Delete Course</h4>
             </div>
             <div class="modal-body">
-            	<div class='panel-heading'>
-                	There was an error<br>
-                	<div class='alert alert-danger'><span class='glyphicon glyphicon-exclamation-sign'></span> Course Number Does Not Exist </div>
-            	</div>
-                <div class="alert alert-warning">
-                    <span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
+                <form role="form" method="post" action='/doDeleteCourse'>
+                    <div class='alert alert-danger'><span class='glyphicon glyphicon-exclamation-sign'></span>
+                        Failed to delete - Course Number Does Not Exist
+                    </div>
+                    <div class="alert alert-warning">
+                        <span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this
+                        Record?
+                    </div>
+
+                    <div class='form-group'>
+                        This action <b>CANNOT</b> be undone. This will permanently delete the course.
+                        <br/>
+                        Please type in the course number to confirm.
+                        <br/>
+                        <input type="text" class="form-control" name="confirmDelete" id="confirmDelete"
+                               placeholder="Course Number">
+                    </div>
+                    <div class="modal-footer"></div>
+                    <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-ok-sign"></span>Yes
+                    </button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal"><span
+                            class="glyphicon glyphicon-remove"></span> No
+                    </button>
+                </form>
             </div>
-            <form method="post" action='ADMIN_Classes.jsp'>
-                <div class='form-group'>
-                    This action <b>CANNOT</b> be undone. This will permanently delete the course.
-                    <br/>
-                    Please type in the name of the repository to confirm.
-                    <input type='text' class="form-control" name="confirmDelete" id="confirmDelete" placeholder="Course Number">
-                </div>
-                <div class="modal-footer"></div>
-                <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-ok-sign"></span>Yes</button>
-                <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
         </div>
-        </form>
     </div>
-</div>
 </div>
 
 <!-- Bootstrap core JavaScript
@@ -244,7 +275,7 @@
 <script src="../../dist/js/bootstrap.min.js"></script>
 <script src="../../assets/js/docs.min.js"></script>
 <script type="text/javascript">
-    $(window).load(function(){
+    $(window).load(function () {
         $('#delete').modal('show');
     });
 </script>
