@@ -49,6 +49,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>EditCourseServlet</servlet-name>
 		<url-pattern>/doEditCourse</url-pattern>
 	</servlet-mapping>
+	<!-- Delete Course Servlet -->
+	<servlet>
+		<servlet-name>DeleteCourseServlet</servlet-name>
+		<servlet-class>com.velvetmastermind.rostr.DeleteCourseServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteCourseServlet</servlet-name>
+		<url-pattern>/doDeleteCourse</url-pattern>
+	</servlet-mapping>
 	<!-- Main Landing Page (LOGIN) -->
 	<welcome-file-list>
 		<welcome-file>LOGIN/LOGIN_Landing.jsp</welcome-file>

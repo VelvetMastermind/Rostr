@@ -213,23 +213,27 @@
                 <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
             </div>
             <div class="modal-body">
+            	<div class='panel-heading'>
+                	There was an error<br>
+                	<div class='alert alert-danger'><span class='glyphicon glyphicon-exclamation-sign'></span> Course Number Does Not Exist </div>
+            	</div>
                 <div class="alert alert-warning">
                     <span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
             </div>
-            <form method="post" action='/doDeleteCourse'>
+            <form method="post" action='ADMIN_Classes.jsp'>
                 <div class='form-group'>
                     This action <b>CANNOT</b> be undone. This will permanently delete the course.
                     <br/>
                     Please type in the name of the repository to confirm.
                     <input type='text' class="form-control" name="confirmDelete" id="confirmDelete" placeholder="Course Number">
                 </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-ok-sign"></span>Yes</button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
-                </div>
-            </form>
+                <div class="modal-footer"></div>
+                <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-ok-sign"></span>Yes</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
         </div>
+        </form>
     </div>
+</div>
 </div>
 
 <!-- Bootstrap core JavaScript
@@ -239,6 +243,11 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="../../dist/js/bootstrap.min.js"></script>
 <script src="../../assets/js/docs.min.js"></script>
+<script type="text/javascript">
+    $(window).load(function(){
+        $('#delete').modal('show');
+    });
+</script>
 <!-- Sortable JS -->
 <script src="../js/sorttable.js"></script>
 </body>
