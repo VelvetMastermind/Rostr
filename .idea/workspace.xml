@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6b753a6-6ea2-4b01-ba6f-645d576a8ceb" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.html" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/ADMIN/ADMIN_Classes.jsp" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_Classes.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/ADMIN/ADMIN_Classes_OLD.html" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_Classes_OLD.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.jsp" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp" afterPath="$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/appengine-generated/datastore-indexes-auto.xml" afterPath="$PROJECT_DIR$/war/WEB-INF/appengine-generated/datastore-indexes-auto.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java" afterPath="$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java" />
     </list>
     <ignored path="Rostr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LOGIN_Landing.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LOGIN_Landing.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7746479" vertical-offset="1230" max-vertical-offset="2130">
+            <state vertical-scroll-proportion="-20.625" vertical-offset="1230" max-vertical-offset="2130">
               <caret line="115" column="88" selection-start-line="115" selection-start-column="88" selection-end-line="115" selection-end-column="88" />
               <folding />
             </state>
@@ -107,7 +101,17 @@
         <entry file="file://$PROJECT_DIR$/src/com/velvetmastermind/rostr/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1455">
-              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddNewUserServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.54751134" vertical-offset="222" max-vertical-offset="960">
+              <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -174,6 +178,7 @@
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp" />
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Classes.jsp" />
         <option value="$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp" />
+        <option value="$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java" />
       </list>
     </option>
   </component>
@@ -598,7 +603,7 @@
       <workItem from="1415941945144" duration="617000" />
       <workItem from="1416108735525" duration="92000" />
       <workItem from="1416109167711" duration="2342000" />
-      <workItem from="1416281822072" duration="5766000" />
+      <workItem from="1416281822072" duration="6572000" />
     </task>
     <task id="LOCAL-00001" summary="APB - Changed login message">
       <created>1414028583495</created>
@@ -610,11 +615,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20625000" />
+    <option name="totallyTimeSpent" value="21431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -676,14 +681,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Classes_OLD.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="3450">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="3105">
@@ -1041,14 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/velvetmastermind/rostr/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1455">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25" vertical-offset="1311" max-vertical-offset="1980">
@@ -1059,8 +1048,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7746479" vertical-offset="1230" max-vertical-offset="2130">
+        <state vertical-scroll-proportion="-20.625" vertical-offset="1230" max-vertical-offset="2130">
           <caret line="115" column="88" selection-start-line="115" selection-start-column="88" selection-end-line="115" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/velvetmastermind/rostr/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1455">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54751134" vertical-offset="222" max-vertical-offset="960">
+          <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
           <folding />
         </state>
       </provider>
