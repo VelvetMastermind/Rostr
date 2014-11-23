@@ -63,7 +63,7 @@ public class Course {
     }
     
     public void setClassNumber(String classNumber) {
-        this.className = classNumber;
+        this.classNumber = classNumber;
     }
 
     public void setClassName(String className) {

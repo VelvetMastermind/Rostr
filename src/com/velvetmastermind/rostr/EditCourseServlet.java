@@ -25,43 +25,27 @@ public class EditCourseServlet extends HttpServlet
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
-		//
-		// TODO - do login processing
-		//
-		String className = req.getParameter("assignClassName");
-		String instructor = req.getParameter("assignInstructor");
-		String hours = req.getParameter("assignTime");
-		String room = req.getParameter("assignRoom");
-		String units = "";
-		String section = req.getParameter("assignSection");
-		String days = req.getParameter("assignDays");
-		String classNumber = req.getParameter("assignNumber");
-		
-		Course editCourse = new Course(className, instructor, hours, room, units, section, days, classNumber);
-		boolean foundError = false;
-		if(!rostrUtilities.courseExists(classNumber)){
-			foundError = true;
-		}	
-		if (foundError) {
-			//rostrUtilities.redirect(resp, "ADMIN_ContactsError.jsp");
+		boolean bResult = false;
+		Course editCourse = rostrUtilities.getCourse(req.getParameter("assignNumber"));	
+		if (editCourse==null) {
+			rostrUtilities.redirect(resp, "ADMIN/ADMIN_ClassesError.jsp");
 		} 
 		else {
-			//
-			// TODO - Permissions handling
-			//
-			//if(permissions == 1 || 2 || etc....) then redirect correctly...
-			DatastoreService ds = rostrUtilities.getDatastore();
-			Query gaeQuery = new Query("course");
-			PreparedQuery pq = ds.prepare(gaeQuery);
-			List<Entity> list = pq.asList(FetchOptions.Builder
-					.withDefaults());
-			for (Entity x : list) {
-				if(x.getProperty("courseNumber").equals(classNumber)){
-					ds.delete(x.getKey());
-				}
-			}
+			rostrUtilities.deleteCourse(editCourse.getClassNumber());
+			try{Thread.sleep(3);}catch(Exception e){}
+			editCourse.setClassName(req.getParameter("assignClassName"));
+			editCourse.setInstructor(req.getParameter("assignInstructor"));
+			editCourse.setHours(req.getParameter("assignTime"));
+			editCourse.setRoom(req.getParameter("assignRoom"));
+			editCourse.setUnits(req.getParameter("assignUnits"));
+			editCourse.setSection(req.getParameter("assignSection"));
+			editCourse.setDays(req.getParameter("assignDays"));
+			editCourse.setClassNumber(req.getParameter("assignNumber"));
 			Entity e = rostrUtilities.createEntity("course");
-			rostrUtilities.addCourseToDatastore(e, editCourse);
+			while(!bResult){
+				bResult = rostrUtilities.addCourseToDatastore(e, editCourse);
+			}
+			try{Thread.sleep(3);}catch(Exception p){}
 			rostrUtilities.redirect(resp, "/ADMIN/ADMIN_Classes.jsp");
 			
 		}

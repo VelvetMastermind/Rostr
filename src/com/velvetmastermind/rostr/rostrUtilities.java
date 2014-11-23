@@ -9,6 +9,7 @@ import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.FetchOptions;
+import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.FilterOperator;
 
@@ -107,17 +108,15 @@ public class rostrUtilities {
 
 		try {
 			DatastoreService ds = getDatastore();
-			if (!courseExists(course.getClassNumber())) {
-				e.setProperty("className", course.getClassName());
-				e.setProperty("instructor", course.getInstructor());
-				e.setProperty("hours", course.getHours());
-				e.setProperty("room", course.getRoom());
-				e.setProperty("units", course.getUnits());
-				e.setProperty("section", course.getSection());
-				e.setProperty("days", course.getDays());
-				e.setProperty("courseNumber", course.getClassNumber());
-				ds.put(e);
-			}
+			e.setProperty("className", course.getClassName());
+			e.setProperty("instructor", course.getInstructor());
+			e.setProperty("hours", course.getHours());
+			e.setProperty("room", course.getRoom());
+			e.setProperty("units", course.getUnits());
+			e.setProperty("section", course.getSection());
+			e.setProperty("days", course.getDays());
+			e.setProperty("courseNumber", course.getClassNumber());
+			ds.put(e);
 			bResult = true;
 		} catch (Exception ex) {
 			System.out
@@ -131,6 +130,56 @@ public class rostrUtilities {
 	public static void redirect(HttpServletResponse resp, String sPath)
 			throws IOException {
 		resp.sendRedirect(sPath);
+	}
+	
+	public static Course getCourse(String courseNumber){
+		if(!courseExists(courseNumber)){
+			return null;
+		}
+		else{
+			Course returnCourse = null;
+			DatastoreService ds = rostrUtilities.getDatastore();
+			Query gaeQuery = new Query("course");
+			PreparedQuery pq = ds.prepare(gaeQuery);
+			List<Entity> list = pq.asList(FetchOptions.Builder
+					.withDefaults());
+			for (Entity x : list) {
+				if(x.getProperty("courseNumber").equals(courseNumber)){
+					String className = (String)x.getProperty("className");
+					String instructor = (String)x.getProperty("instructor");
+					String hours = (String)x.getProperty("hours");
+					String room = (String)x.getProperty("room");
+					String units = (String)x.getProperty("units");
+					String section = (String)x.getProperty("section");
+					String days = (String)x.getProperty("days");
+					String classNumber = (String)x.getProperty("courseNumber");
+					returnCourse = new Course(className, instructor, hours, room, units, section, days, classNumber);
+					break;
+				}
+			}
+			return returnCourse;
+		}
+	}
+	public static boolean deleteCourse(String courseNumber){
+		boolean bResult = false;
+		
+		if(!courseExists(courseNumber))
+			return bResult;
+		else{
+			DatastoreService ds = rostrUtilities.getDatastore();
+			Query gaeQuery = new Query("course");
+			PreparedQuery pq = ds.prepare(gaeQuery);
+			List<Entity> list = pq.asList(FetchOptions.Builder
+					.withDefaults());
+			for (Entity x : list) {
+				if(x.getProperty("courseNumber").equals(courseNumber)){
+					ds.delete(x.getKey());
+					bResult = true;
+					break;
+				}
+			}
+			return bResult;
+		}
 	}
 
 }

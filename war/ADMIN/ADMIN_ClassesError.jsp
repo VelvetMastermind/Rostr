@@ -159,6 +159,10 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel">Edit Course</h4>
             </div>
+            <div class='panel-heading'>
+                There was an error<br>
+                <div class='alert alert-danger'><span class='glyphicon glyphicon-exclamation-sign'></span> Course Number Does Not Exist </div>
+            </div>
             <div class="modal-body">
                 <form role="form" method="POST" action="/doEditCourse">
                     <div class="form-group">
@@ -234,6 +238,11 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="../../dist/js/bootstrap.min.js"></script>
 <script src="../../assets/js/docs.min.js"></script>
+<script type="text/javascript">
+    $(window).load(function(){
+        $('#editCourse').modal('show');
+    });
+</script>
 <!-- Sortable JS -->
 <script src="../js/sorttable.js"></script>
 </body>
