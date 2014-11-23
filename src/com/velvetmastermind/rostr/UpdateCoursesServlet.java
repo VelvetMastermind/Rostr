@@ -1,24 +1,15 @@
 package com.velvetmastermind.rostr;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
-
 import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.FetchOptions;
-import com.google.appengine.api.datastore.Key;
-import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.Query;
-
 import java.util.List;
 import com.google.appengine.api.datastore.PreparedQuery;
-
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,7 +31,6 @@ public class UpdateCoursesServlet extends HttpServlet {
 		boolean failSafe = false;
 		while (!failSafe) {
 			try {
-				boolean isClass = false;
 				String className = "";
 				String instructor = "";
 				String hours = "";
