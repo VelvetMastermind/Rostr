@@ -87,6 +87,12 @@
                         <button formaction="ADMIN_Classes.jsp"  class="btn btn-xlarge">Courses <span class="glyphicon glyphicon-th-list"></span> </button>
                         <button formaction="ADMIN_Contacts.jsp"  class="btn btn-xlarge">Contacts <span class="glyphicon glyphicon-user"></span> </button>
                         <button formaction="/doUpdateCourses" type="submit"  class="btn btn-xlarge" data-target="#processingModal">Update<br>Courses<br><span class="glyphicon glyphicon-retweet"></span></button>
+                        <button formaction="ADMIN_PendingUsers.jsp" class="btn btn-xlarge">Pending
+                            <br/>
+                            Users
+                            <br/>
+                            <span class="glyphicon glyphicon glyphicon-info-sign"></span>
+                        </button>
                     </form>
                 </div>
             </div>

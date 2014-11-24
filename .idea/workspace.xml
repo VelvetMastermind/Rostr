@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6b753a6-6ea2-4b01-ba6f-645d576a8ceb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsers.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsersError.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsersSuccess.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/war/LOGIN/LOGIN_addUserFail.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/war/LOGIN/LOGIN_addUserSuccess.jsp" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/appengine-api-1.0-sdk-1.9.14.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/appengine-api-labs.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/appengine-endpoints-deps.jar" afterPath="" />
@@ -16,10 +22,24 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/jdo-api-3.0.1.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/jsr107cache-1.1.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/jta-1.1.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/velvetmastermind/rostr/AddAdminServlet.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/velvetmastermind/rostr/AddAdminServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/velvetmastermind/rostr/AddNewUserServlet.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/velvetmastermind/rostr/AddNewUserServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/velvetmastermind/rostr/LoginServlet.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/velvetmastermind/rostr/LoginServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/appengine-generated/local_db.bin" afterPath="$PROJECT_DIR$/war/WEB-INF/appengine-generated/local_db.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/velvetmastermind/rostr/rostrUtilities.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/velvetmastermind/rostr/rostrUtilities.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/ADMIN/ADMIN_Classes.jsp" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_Classes.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/ADMIN/Admin_ClassesDeleteError.jsp" afterPath="$PROJECT_DIR$/war/ADMIN/Admin_ClassesDeleteError.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.jsp" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddAdminServlet.java" afterPath="$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddAdminServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java" afterPath="$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp" afterPath="$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/LOGIN/LOGIN_LandingERROR.jsp" afterPath="$PROJECT_DIR$/war/LOGIN/LOGIN_LandingERROR.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/velvetmastermind/rostr/LoginServlet.java" afterPath="$PROJECT_DIR$/src/com/velvetmastermind/rostr/LoginServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rostr.iml" afterPath="$PROJECT_DIR$/Rostr.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/com.google.appengine.eclipse.core.prefs" afterPath="$PROJECT_DIR$/.settings/com.google.appengine.eclipse.core.prefs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/appengine-generated/datastore-indexes-auto.xml" afterPath="$PROJECT_DIR$/war/WEB-INF/appengine-generated/datastore-indexes-auto.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/velvetmastermind/rostr/rostrUtilities.java" afterPath="$PROJECT_DIR$/src/com/velvetmastermind/rostr/rostrUtilities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/war/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Rostr.iws" />
@@ -85,31 +105,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ADMIN_Classes.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ADMIN_PendingUsers.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsers.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.9583335" vertical-offset="3169" max-vertical-offset="3645">
+              <caret line="224" column="6" selection-start-line="224" selection-start-column="6" selection-end-line="224" selection-end-column="6" />
+              <folding>
+                <element signature="e#4166#4174#0#JAVA" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="1335">
+              <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ADMIN_PendingUsersSuccess.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsersSuccess.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.9583333" vertical-offset="3289" max-vertical-offset="3900">
+              <caret line="224" column="6" selection-start-line="224" selection-start-column="6" selection-end-line="224" selection-end-column="6" />
+              <folding>
+                <element signature="e#4166#4174#0#JAVA" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ADMIN_PendingUsersError.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsersError.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-131.25" vertical-offset="60" max-vertical-offset="3900">
+              <caret line="214" column="72" selection-start-line="214" selection-start-column="72" selection-end-line="214" selection-end-column="72" />
+              <folding>
+                <element signature="e#4166#4174#0#JAVA" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ADMIN_Contacts.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.375" vertical-offset="1371" max-vertical-offset="3345">
+              <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ADMIN_Classes.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Classes.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.25" vertical-offset="3021" max-vertical-offset="3885">
-              <caret line="213" column="79" selection-start-line="213" selection-start-column="79" selection-end-line="213" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Admin_ClassesDeleteError.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/war/ADMIN/Admin_ClassesDeleteError.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38967136" vertical-offset="3426" max-vertical-offset="4365">
-              <caret line="245" column="76" selection-start-line="245" selection-start-column="76" selection-end-line="245" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ADMIN_ClassesError.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_ClassesError.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.0" vertical-offset="2931" max-vertical-offset="3900">
-              <caret line="221" column="18" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
+            <state vertical-scroll-proportion="9.715026" vertical-offset="0" max-vertical-offset="4050">
+              <caret line="250" column="8" selection-start-line="250" selection-start-column="8" selection-end-line="250" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -132,13 +188,23 @@
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.html" />
         <option value="$PROJECT_DIR$/src/com/velvetmastermind/rostr/LoginServlet.java" />
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Classes_OLD.html" />
-        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.jsp" />
-        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp" />
-        <option value="$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp" />
-        <option value="$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java" />
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_ClassesError.jsp" />
-        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Classes.jsp" />
         <option value="$PROJECT_DIR$/war/ADMIN/Admin_ClassesDeleteError.jsp" />
+        <option value="$PROJECT_DIR$/war/LOGIN/LOGIN_addUserFail.jsp" />
+        <option value="$PROJECT_DIR$/war/LOGIN/LOGIN_addUserSuccess.jsp" />
+        <option value="$PROJECT_DIR$/war/LOGIN/LOGIN_LandingERROR.jsp" />
+        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.jsp" />
+        <option value="$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp" />
+        <option value="$PROJECT_DIR$/src/com/velvetmastermind/rostr/rostrUtilities.java" />
+        <option value="$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java" />
+        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_ContactsSuccess.jsp" />
+        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_ContactsError.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp" />
+        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsers.jsp" />
+        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsersSuccess.jsp" />
+        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsersError.jsp" />
+        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Classes.jsp" />
       </list>
     </option>
   </component>
@@ -147,8 +213,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="width" value="1360" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -257,24 +323,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Rostr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Rostr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rostr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -583,7 +631,7 @@
       <workItem from="1416108735525" duration="92000" />
       <workItem from="1416109167711" duration="2342000" />
       <workItem from="1416281822072" duration="6572000" />
-      <workItem from="1416775599618" duration="1849000" />
+      <workItem from="1416775599618" duration="13165000" />
     </task>
     <task id="LOCAL-00001" summary="APB - Changed login message">
       <created>1414028583495</created>
@@ -595,42 +643,42 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23280000" />
+    <option name="totallyTimeSpent" value="34596000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <frame x="0" y="23" width="1360" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32886904" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19338235" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32886904" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32886904" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20546874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32886904" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -653,7 +701,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="APB - Changed login message" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -661,36 +711,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="3105">
-          <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/velvetmastermind/rostr/rostrUtilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="3105">
-          <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="495">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rostr.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="735">
@@ -931,41 +951,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/velvetmastermind/rostr/rostrUtilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1965">
-          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/war/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7746479" vertical-offset="1305" max-vertical-offset="3255">
-          <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1311" max-vertical-offset="1980">
-          <caret line="87" column="81" selection-start-line="87" selection-start-column="81" selection-end-line="87" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="2130">
-          <caret line="115" column="88" selection-start-line="115" selection-start-column="88" selection-end-line="115" selection-end-column="88" />
           <folding />
         </state>
       </provider>
@@ -978,42 +967,128 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java">
+    <entry file="file://$PROJECT_DIR$/war/LOGIN/LOGIN_addUserFail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="960">
-          <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="404" max-vertical-offset="1065">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_ClassesError.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.0" vertical-offset="2931" max-vertical-offset="3900">
-          <caret line="221" column="18" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Classes.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.25" vertical-offset="3021" max-vertical-offset="3885">
-          <caret line="213" column="79" selection-start-line="213" selection-start-column="79" selection-end-line="213" selection-end-column="79" />
+        <state vertical-scroll-proportion="-12.25" vertical-offset="201" max-vertical-offset="2235">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/war/ADMIN/Admin_ClassesDeleteError.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38967136" vertical-offset="3426" max-vertical-offset="4365">
+        <state vertical-scroll-proportion="-10.375" vertical-offset="3426" max-vertical-offset="4365">
           <caret line="245" column="76" selection-start-line="245" selection-start-column="76" selection-end-line="245" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.3333335" vertical-offset="1748" max-vertical-offset="2355">
+          <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/LOGIN/LOGIN_addUserSuccess.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5436573" vertical-offset="900" max-vertical-offset="2235">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4958813" vertical-offset="0" max-vertical-offset="2070">
+          <caret line="101" column="55" selection-start-line="0" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/LOGIN/LOGIN_LandingERROR.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="420" max-vertical-offset="2295">
+          <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/velvetmastermind/rostr/rostrUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4050">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/velvetmastermind/rostr/AddNewUserServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_ClassesError.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3333335" vertical-offset="3499" max-vertical-offset="3900">
+          <caret line="245" column="0" selection-start-line="245" selection-start-column="0" selection-end-line="249" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.375" vertical-offset="1371" max-vertical-offset="3345">
+          <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="1335">
+          <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsers.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.9583335" vertical-offset="3169" max-vertical-offset="3645">
+          <caret line="224" column="6" selection-start-line="224" selection-start-column="6" selection-end-line="224" selection-end-column="6" />
+          <folding>
+            <element signature="e#4166#4174#0#JAVA" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsersSuccess.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9583333" vertical-offset="3289" max-vertical-offset="3900">
+          <caret line="224" column="6" selection-start-line="224" selection-start-column="6" selection-end-line="224" selection-end-column="6" />
+          <folding>
+            <element signature="e#4166#4174#0#JAVA" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsersError.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-131.25" vertical-offset="60" max-vertical-offset="3900">
+          <caret line="214" column="72" selection-start-line="214" selection-start-column="72" selection-end-line="214" selection-end-column="72" />
+          <folding>
+            <element signature="e#4166#4174#0#JAVA" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Classes.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="9.715026" vertical-offset="0" max-vertical-offset="4050">
+          <caret line="250" column="8" selection-start-line="250" selection-start-column="8" selection-end-line="250" selection-end-column="8" />
           <folding />
         </state>
       </provider>

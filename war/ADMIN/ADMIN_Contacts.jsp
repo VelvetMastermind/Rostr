@@ -8,6 +8,7 @@
 <%@ page import="com.velvetmastermind.rostr.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.google.appengine.api.datastore.PreparedQuery" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,40 +85,45 @@
                     </div>
                     <table class="table table-striped sortable">
                         <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Office</th>
-                                <th>Phone Number</th>
-                                <th>Email</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                            </thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>PantherID</th>
+                            <th>Room Number</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                        </tr>
+                        </thead>
                         <tbody>
                         <%
-                            DatastoreService ds = rostrUtilities.getDatastore();
+                            DatastoreService datastore = rostrUtilities.getDatastore();
                             Query gaeQuery = new Query("user");
-                            PreparedQuery pq = ds.prepare(gaeQuery);
+                            PreparedQuery pq = datastore.prepare(gaeQuery);
                             List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
-                            for(Entity user : list){
-                                String name = (String)user.getProperty("name");
-                                String officeNo = (String)user.getProperty("officeNo");
-                                String phoneNumber = (String)user.getProperty("phoneNumber");
-                                String email = (String)user.getProperty("email");
-                                String userUID = (String)user.getProperty("userUID");
-                        %> <tr>
-                            <td> <%= name%>
+                            ArrayList<Entity> visible = new ArrayList<Entity>();
+                            for(Entity x : list)
+                            {
+                                if(rostrUtilities.getAccessLevel(x.getProperty("username").toString()) != -1)
+                                    visible.add(x);
+                            }
+                            for(Entity x : visible){
+                                String fullName = (String)x.getProperty("fullName");
+                                String pantherID = (String)x.getProperty("pantherID");
+                                String roomNumber = (String)x.getProperty("roomNumber");
+                                String phoneNumber = (String)x.getProperty("phoneNumber");
+                                String email = (String)x.getProperty("email");
+                                if(fullName != null){
+                        %>
+                        <tr><td> <%= fullName%>
+                        </td>
+                            <td> <%= pantherID%>
                             </td>
-                            <td> <%= officeNo%>
+                            <td> <%= roomNumber%>
                             </td>
                             <td> <%= phoneNumber%>
                             </td>
                             <td> <%= email%>
                             </td>
-                            <!-- Edit/Delete Buttons -->
-                            <td><p><button class="btn btn-primary btn-xs" id='<%= userUID + "EDIT"%>' data-title="Edit" data-toggle="modal" data-target="#editCourse" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                            <td><p><button class="btn btn-danger btn-xs" id='<%= userUID + "DELETE"%>' data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                                <%  } //End for
+                                <% }}
 						%>
                             <!-- NOT SUPPORTED IN SPRINT 2
                             <tr class="add_class">

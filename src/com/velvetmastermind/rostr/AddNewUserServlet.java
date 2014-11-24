@@ -1,15 +1,13 @@
 package com.velvetmastermind.rostr;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.Entity;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.Entity;
-import com.sun.org.apache.xalan.internal.xsltc.dom.ArrayNodeListIterator;
+import java.io.IOException;
+import java.util.ArrayList;
 
 @SuppressWarnings("serial")
 public class AddNewUserServlet extends HttpServlet
@@ -31,10 +29,12 @@ public class AddNewUserServlet extends HttpServlet
 			String pantherID = "";
 			String roomNumber = "";
 			String phoneNumber = "";
+			String email = "";
 			String officeHours = "";
 	        username = req.getParameter("fullName");
 	        password = req.getParameter("newPassword");
 	        pantherID = req.getParameter("pantherID");
+	        email = req.getParameter("email"); 
 	        roomNumber = req.getParameter("roomNumber");
 	        phoneNumber = req.getParameter("phoneNumber");
 	        officeHours = req.getParameter("officeHours");
@@ -51,15 +51,15 @@ public class AddNewUserServlet extends HttpServlet
 	        DatastoreService ds = rostrUtilities.getDatastore();
 	        Entity e = rostrUtilities.createEntity("user");
 
-	        success = rostrUtilities.addUserToDatastore(e, username, password, pantherID, roomNumber, phoneNumber, officeHours, iAccessLevel, ds);
+	        success = rostrUtilities.addUserToDatastore(e, username, email, password, pantherID, roomNumber, phoneNumber, officeHours, iAccessLevel, ds);
 	        if(success)
-	            resp.getWriter().println("Created user!");
+	            rostrUtilities.redirect(resp, "LOGIN/LOGIN_addUserSuccess.jsp");
 	        else
-	            resp.getWriter().println("Error creating user or user already exists...");
+	            rostrUtilities.redirect(resp, "LOGIN/LOGIN_addUserFail.jsp");
 	        
     	}
     	catch(Exception ex){
-    		System.out.println("AddAdminServlet(doPost) exception.");
+    		System.out.println("AddAdminServlet(doPost) exception.\n" + ex.getMessage());
     		rostrUtilities.redirect(resp, "LOGIN/LOGIN_LandingERROR.jsp");
     	}
     }

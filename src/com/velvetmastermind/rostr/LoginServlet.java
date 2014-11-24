@@ -43,8 +43,8 @@ public class LoginServlet extends HttpServlet
 			System.out.println("Password is incorrect...");
 		}
 			
-		if (foundError) {
-			rostrUtilities.redirect(resp, "LOGIN/LOGIN_LandingERROR.html");
+		if (foundError || (rostrUtilities.getAccessLevel(username) != 0)) {
+			rostrUtilities.redirect(resp, "LOGIN/LOGIN_LandingERROR.jsp");
 		} 
 		else {
 			//

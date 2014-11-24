@@ -85,35 +85,50 @@
     <div class='modal-dialog'>
         <div class='modal-content'>
             <div class='modal-header'>
-                <button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button>
+                <button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>&times;</span><span
+                        class='sr-only'>Close</span></button>
                 <h4 class='modal-title' id='myModalLabel'>Create an Account</h4>
             </div>
             <div class='modal-body'>
                 <form role='form' method='POST' action='/doAddNewUser'>
                     <div class='form-group'>
                         <label for='fullName'>Full Name</label>
-                        <input type='text' class='form-control' id='fullName' placeholder='Full Name' required>
+                        <input type='text' class='form-control' name='fullName' id='fullName' placeholder='Full Name'
+                               required>
                     </div>
                     <div class='form-group'>
-                        <label for='pantherID'>PantherID <label class='small'>(This will be your username)</label></label>
-                        <input type='text' class='form-control' id='pantherID' placeholder='PantherID' required>
+                        <label for='pantherID'>PantherID <label class='small'>(This will be your
+                            username)</label></label>
+                        <input type='text' class='form-control' name='pantherID' id='pantherID' placeholder='PantherID'
+                               required>
+                    </div>
+                    <div class='form-group'>
+                        <label for='email'>Email</label>
+                        <input type='email' class='form-control' name='email' id='email'
+                               placeholder='Email' required>
                     </div>
                     <div class='form-group'>
                         <label for='newPassword'>Password</label>
-                        <input type='password' class='form-control' id='newPassword' placeholder='Password' required>
+                        <input type='password' class='form-control' name='newPassword' id='newPassword'
+                               placeholder='Password' required>
                     </div>
                     <div class='form-group'>
                         <label for='roomNumber'>Office Number</label>
-                        <input type='text' class='form-control' id='roomNumber' placeholder='Room Number' required>
+                        <input type='text' class='form-control' name='roomNumber' id='roomNumber'
+                               placeholder='Room Number' required>
                     </div>
                     <div class='form-group'>
                         <label for='phoneNumber'>Phone Number</label>
-                        <input type='tel' class='form-control' id='phoneNumber' placeholder='Phone Number' required>
+                        <input type='tel' class='form-control' name='phoneNumber' id='phoneNumber'
+                               placeholder='Phone Number' required>
                     </div>
                     <div class='form-group'>
                         <label for='officeHours'>Office Hours</label>
-                        <input type='text' class='form-control' id='officeHours' placeholder='Office Hours (separate by colon)'>
-                        <label><small>In format of : 2:00PM-3:00PM MWF;9:00AM-10:00AM TR</small></label>
+                        <input type='text' class='form-control' name='officeHours' id='officeHours'
+                               placeholder='Office Hours (separate by semi-colon)'>
+                        <label>
+                            <small>In format of : 2:00PM-3:00PM MWF;9:00AM-10:00AM TR</small>
+                        </label>
                     </div>
                     <input type='submit' class='btn btn-success btn-sm' value='Submit'/>
                 </form>

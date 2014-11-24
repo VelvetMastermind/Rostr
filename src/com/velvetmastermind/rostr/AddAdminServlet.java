@@ -31,7 +31,7 @@ public class AddAdminServlet extends HttpServlet
 	        DatastoreService ds = rostrUtilities.getDatastore();
 	        Entity e = rostrUtilities.createEntity("user"); 
 
-	        createdAdmin = rostrUtilities.addUserToDatastore(e, username, password, "admin", "N/A", "N/A", "N/A", iAccessLevel, ds); 
+	        createdAdmin = rostrUtilities.addUserToDatastore(e, username, "admin", password, "admin", "N/A", "N/A", "N/A", iAccessLevel, ds); 
 	        if(iAccessLevel != -1 && iAccessLevel != 1 && iAccessLevel != 2 && iAccessLevel != 3) 
 	        {
 	        	createdAdmin = false;
