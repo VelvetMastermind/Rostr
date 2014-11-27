@@ -164,6 +164,21 @@ public class rostrUtilities {
 		return bResult;
 	}
 
+	/**
+	 * Adds user to datastore. Sets all necessary fields...
+	 * @param Entity e the entity to be written to/created
+	 * @param String sFullName is the full name of the new user
+	 * @param String sEmail is the email of the new user
+	 * @param String sPassword is the requested password for the new user
+	 * @param String pantherID is the PantherID of the new user
+	 * @param String roomNumber is the room/office number for the new user
+	 * @param String phoneNumber is the phone number of the new user
+	 * @param String officeHours is the office hours of the new user
+	 * @param int iAccessLevel is the accesslevel of the new user
+	 * @param DatastoreService is the datastore in which the new user will be stored.
+	 * @return boolean whether or not the add was successful
+	 * @author Andrew Budziszek
+	 */
 	public static boolean addUserToDatastore(Entity e, String sFullName, String sEmail, String sPassword, String pantherID, String roomNumber, String phoneNumber, String officeHours, int iAccessLevel, DatastoreService ds) {
     	boolean bResult = false;
     	

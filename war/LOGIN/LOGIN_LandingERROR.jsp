@@ -79,7 +79,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 <!-- New User Modal -->
 <div class='modal fade' id='addUser' tabindex='-1' role='dialog' aria-labelledby='addUser' aria-hidden='true'>
@@ -104,6 +104,11 @@
                                required>
                     </div>
                     <div class='form-group'>
+                        <label for='email'>Email</label>
+                        <input type='email' class='form-control' name='email' id='email'
+                               placeholder='Email' required>
+                    </div>
+                    <div class='form-group'>
                         <label for='newPassword'>Password</label>
                         <input type='password' class='form-control' name='newPassword' id='newPassword'
                                placeholder='Password' required>
@@ -116,7 +121,7 @@
                     <div class='form-group'>
                         <label for='phoneNumber'>Phone Number</label>
                         <input type='tel' class='form-control' name='phoneNumber' id='phoneNumber'
-                               placeholder='Phone Number' required>
+                               placeholder='Phone Number' pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" required>
                     </div>
                     <div class='form-group'>
                         <label for='officeHours'>Office Hours</label>
@@ -133,6 +138,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Bootstrap core JavaScript
         ================================================== -->

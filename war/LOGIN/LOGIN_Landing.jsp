@@ -120,7 +120,7 @@
                     <div class='form-group'>
                         <label for='phoneNumber'>Phone Number</label>
                         <input type='tel' class='form-control' name='phoneNumber' id='phoneNumber'
-                               placeholder='Phone Number' required>
+                               placeholder='Phone Number' pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" required>
                     </div>
                     <div class='form-group'>
                         <label for='officeHours'>Office Hours</label>

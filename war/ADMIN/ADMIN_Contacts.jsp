@@ -73,7 +73,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li><a class="nav_item" href="ADMIN_Landing.jsp">Dashboard</a></li>
-                <li><a class="nav_item" href="ADMIN_Classes.jsp">Classes</a></li>
+                <li><a class="nav_item" href="ADMIN_Classes.jsp">Courses</a></li>
                 <li class="active"><a class="nav_item" href="ADMIN_Contacts.jsp">Contacts</a></li>
             </ul>
         </div>
