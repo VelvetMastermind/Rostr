@@ -1,3 +1,8 @@
+/**
+ * Updates the course with custom information the user enters
+ * 
+ * @author VelvetMastermind
+ */
 package com.velvetmastermind.rostr;
 
 import java.io.IOException;

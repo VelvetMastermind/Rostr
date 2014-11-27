@@ -1,3 +1,10 @@
+/**
+ * Scrapes the course catalog site. 
+ * Stores the information in a course object
+ * Deletes all the old course information
+ * Publishes the information to the datastore
+ * @author VelvetMastermind
+ */
 package com.velvetmastermind.rostr;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;

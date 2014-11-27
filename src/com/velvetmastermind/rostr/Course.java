@@ -1,3 +1,8 @@
+/**
+ *Course class with fields that are scraped from the course catalog
+ *Each Field has a getter and setter method
+ * @author VelvetMastermind
+ */
 package com.velvetmastermind.rostr;
 
 public class Course {
