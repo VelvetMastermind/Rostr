@@ -3,7 +3,7 @@
  * If it exists it deletes the entity and refreshes the page
  * If it doesn't exist an error page pops up and reprompts
  * 
- * @author VelvetMastermind
+ * @author Joseph Thomaschaske
  */
 package com.velvetmastermind.rostr;
 

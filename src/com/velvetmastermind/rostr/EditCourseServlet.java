@@ -1,7 +1,7 @@
 /**
  * Updates the course with custom information the user enters
  * 
- * @author VelvetMastermind
+ * @author Joseph Thomaschaske
  */
 package com.velvetmastermind.rostr;
 

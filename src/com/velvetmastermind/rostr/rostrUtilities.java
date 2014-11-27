@@ -71,6 +71,7 @@ public class rostrUtilities {
 	 * Determines whether or not a course exists
 	 * @param courseNumber the unique id associated with a specific course
 	 * @return boolean based on where the specified course exists
+	 * @author Joseph Thomaschaske
 	 */
 	public static boolean courseExists(String courseNumber) {
 		boolean bResult = false;
@@ -88,7 +89,12 @@ public class rostrUtilities {
 
 		return bResult;
 	}
-	
+	/**
+	 * Returns user
+	 * @param sUsername the username of the user
+	 * @return Entity, the user profile entity
+	 * @author Andrew Budziszek
+	 */
 	public static Entity getUserByUsername(String sUsername)
 	{
 		DatastoreService ds = getDatastore();
@@ -102,13 +108,23 @@ public class rostrUtilities {
 		
 		return user; 
 	}
-
+	/**
+	 * Returns user's password
+	 * @param sUsername
+	 * @return the user's password
+	 * @author Andrew Budziszek
+	 */
 	public static String getPassword(String sUsername) {
 		Entity e = getUserByUsername(sUsername); 
 
 		return (String) e.getProperty("password");
 	}
-	
+	/**
+	 * Returns a user's access level
+	 * @param username to determine user access level
+	 * @return long the access level of the user
+	 * @author Andrew Budziszek
+	 */
 	public static long getAccessLevel(String sUsername) {
 		Entity user = null;
 		
@@ -125,6 +141,7 @@ public class rostrUtilities {
 	 * A valid password is a password that has greater than or equal to 6 characters.
 	 * @param sPassword requested password
 	 * @return boolean whether or not the password is valid
+	 * @author Andrew Budziszek
 	 */
 	public static boolean validPassword(String sPassword) {
 		boolean bResult = false;
@@ -187,7 +204,12 @@ public class rostrUtilities {
     	
     	return bResult;
     }
-	
+	/**
+	 * Writes a course to the datastore
+	 * @param Entity e the entity to be written to
+	 * @return course the course information to be written
+	 * @author Andrew Budziszek
+	 */
 	public static boolean addCourseToDatastore(Entity e, Course course) {
 		boolean bResult = false;
 
@@ -211,12 +233,23 @@ public class rostrUtilities {
 
 		return bResult;
 	}
-
+	/**
+	 * Redirects to a different page
+	 * @param resp the servlet response
+	 * @param sPath the path to the webpage to redirect to
+	 * @return void
+	 * @author Andrew Budziszek
+	 */
 	public static void redirect(HttpServletResponse resp, String sPath)
 			throws IOException {
 		resp.sendRedirect(sPath);
 	}
-	
+	/**
+	 * Returns the course requested or null if it doesn't exist
+	 * @param courseNumber
+	 * @return Course the course they requested or null if it doesn't exist
+	 * @author Joseph Thomaschaske
+	 */
 	public static Course getCourse(String courseNumber){
 		if(!courseExists(courseNumber)){
 			return null;
@@ -244,7 +277,12 @@ public class rostrUtilities {
 			return returnCourse;
 		}
 	}
-	
+	/**
+	 * Removes the course from the datastore
+	 * @param courseNumber the course to be deleted
+	 * @return boolean whether or not the course was deleted
+	 * @author Joseph Thomaschaske
+	 */
 	public static boolean deleteCourse(String courseNumber){
 		boolean bResult = false;
 		
