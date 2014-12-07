@@ -93,35 +93,45 @@
                             <br/>
                             <span class="glyphicon glyphicon glyphicon-info-sign" data-target="#sendEmail"></span>
                         </button>
-                        <button formaction="email" class="btn btn-xlarge">
+                        <a class="btn btn-xlarge" data-title="Email" data-toggle="modal" data-target="#sendEmail" data-placement="top" rel="tooltip">
                             Email
                             <br/>
                             <span class="glyphicon glyphicon-envelope"></span>
-                        </button>
+                        </a>
                     </form>
                 </div>
             </div>
         </div>
 
-<!-- Processing Modal -->
-<div class="modal fade" id="sendEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
-    <div class="modal-dialog">
-        <div class="modal-content">
-                <div class="modal-header">
-                    <h1>Processing...</h1>
-                </div>
-                <div class="modal-body">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                            <span class="sr-only">100% Complete</span>
-                        </div>
+    <!-- Processing Modal -->
+    <div class="modal fade" id="sendEmail" tabindex="-1" role="dialog" aria-labelledby="sendEmail" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <div class="modal-header">
+                        <h1>Send Email</h1>
                     </div>
+                    <form action="/doSendEmail" class="form-group" id="doSendEmail">
+                        <div class="modal-body form-group">
+                            <div class="form-group">
+                                <label for="emailRecipients">Recipients</label>
+                                <input type="text" class="form-control" id="emailRecipients" name="emailRecipients" placeholder="Recipients"/>
+                            </div>
+                            <div class="form-group">
+                                All <input type="checkbox" id="sendAll" name="sendAll" value="0">
+                                &nbsp;&nbsp;&nbsp;&nbsp; Instructors <input type="checkbox" id="sendInstructors" name="sendInstructors" value="1">
+                                &nbsp;&nbsp;&nbsp;&nbsp; TAs <input type="checkbox" id="sendTAs" name="sendTAs" value="2">
+                            </div>
+                            <div class="form-group">
+                                <label for="sendMessage">Message:</label>
+                                <textarea class="form-control" id="sendMessage" name="sendMessage" placeholder="Message" rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
     </div>
-</div>
 </div>
 
     <!-- Bootstrap core JavaScript
