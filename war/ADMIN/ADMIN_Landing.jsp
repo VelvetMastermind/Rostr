@@ -86,12 +86,17 @@
                     <form class="form-group" method="POST" action="ADMIN_Landing.jsp" id="actionButtons">
                         <button formaction="ADMIN_Classes.jsp"  class="btn btn-xlarge">Courses <span class="glyphicon glyphicon-th-list"></span> </button>
                         <button formaction="ADMIN_Contacts.jsp"  class="btn btn-xlarge">Contacts <span class="glyphicon glyphicon-user"></span> </button>
-                        <button formaction="/doUpdateCourses" type="submit"  class="btn btn-xlarge" data-target="#processingModal">Update<br>Courses<br><span class="glyphicon glyphicon-retweet"></span></button>
+                        <button formaction="/doUpdateCourses" type="submit"  class="btn btn-xlarge">Update<br/>Courses<br/><span class="glyphicon glyphicon-retweet"></span></button>
                         <button formaction="ADMIN_PendingUsers.jsp" class="btn btn-xlarge">Pending
                             <br/>
                             Users
                             <br/>
-                            <span class="glyphicon glyphicon glyphicon-info-sign"></span>
+                            <span class="glyphicon glyphicon glyphicon-info-sign" data-target="#sendEmail"></span>
+                        </button>
+                        <button formaction="email" class="btn btn-xlarge">
+                            Email
+                            <br/>
+                            <span class="glyphicon glyphicon-envelope"></span>
                         </button>
                     </form>
                 </div>
@@ -99,7 +104,7 @@
         </div>
 
 <!-- Processing Modal -->
-<div class="modal fade" id="processingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade" id="sendEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
                 <div class="modal-header">

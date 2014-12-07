@@ -1,3 +1,10 @@
+/**
+ * Adds an admin to the datastore.
+ * Used in beginning of production to have a login for
+ * our web application.
+ *
+ * @author Andrew Budziszek
+ */
 package com.velvetmastermind.rostr;
 
 import java.io.IOException;
