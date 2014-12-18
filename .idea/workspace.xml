@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6b753a6-6ea2-4b01-ba6f-645d576a8ceb" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/appengine-api-1.0-sdk-1.9.14.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/appengine-api-labs.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/appengine-endpoints-deps.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/appengine-endpoints.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/appengine-jsr107cache-1.9.14.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/asm-4.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/datanucleus-api-jdo-3.1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/datanucleus-api-jpa-3.1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/datanucleus-appengine-2.1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/datanucleus-core-3.1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/geronimo-jpa_2.0_spec-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/jdo-api-3.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/jsr107cache-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/lib/jta-1.1.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/ADMIN/ADMIN_MyProfile.jsp" afterPath="$PROJECT_DIR$/war/ADMIN/ADMIN_MyProfile.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/com.google.appengine.eclipse.core.prefs" afterPath="$PROJECT_DIR$/.settings/com.google.appengine.eclipse.core.prefs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/appengine-generated/datastore-indexes-auto.xml" afterPath="$PROJECT_DIR$/war/WEB-INF/appengine-generated/datastore-indexes-auto.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Rostr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,6 +84,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="ADMIN_MyProfile.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_MyProfile.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-108.125" vertical-offset="600" max-vertical-offset="4230">
+              <caret line="213" column="38" selection-start-line="213" selection-start-column="38" selection-end-line="213" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fullcalendar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/jquery/fullcalendar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="91725">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LOGIN_LandingERROR.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/war/LOGIN/LOGIN_LandingERROR.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,11 +126,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LOGIN_Landing.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LOGIN_Landing.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46644846" vertical-offset="0" max-vertical-offset="2355">
+            <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="2355">
               <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/css/bootstrap.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2816" max-vertical-offset="62820">
+              <caret line="203" column="7" selection-start-line="203" selection-start-column="1" selection-end-line="203" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -102,6 +151,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="855">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ADMIN_Contacts.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.23474178" vertical-offset="1605" max-vertical-offset="3345">
+              <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -138,7 +197,6 @@
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_ClassesError.jsp" />
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp" />
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_Landing.jsp" />
-        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_MyProfile.jsp" />
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsers.jsp" />
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsersError.jsp" />
         <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsersSuccess.jsp" />
@@ -146,6 +204,7 @@
         <option value="$PROJECT_DIR$/war/LOGIN/LOGIN_addUserSuccess.jsp" />
         <option value="$PROJECT_DIR$/war/LOGIN/LOGIN_LandingERROR.jsp" />
         <option value="$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp" />
+        <option value="$PROJECT_DIR$/war/ADMIN/ADMIN_MyProfile.jsp" />
       </list>
     </option>
   </component>
@@ -153,9 +212,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1280" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="745" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -249,7 +309,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="jquery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rostr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rostr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ADMIN" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -569,7 +647,7 @@
       <workItem from="1417157207059" duration="74000" />
       <workItem from="1417298267485" duration="5000" />
       <workItem from="1417922894546" duration="6256000" />
-      <workItem from="1418927292869" duration="5524000" />
+      <workItem from="1418927292869" duration="6929000" />
     </task>
     <task id="LOCAL-00001" summary="APB - Changed login message">
       <created>1414028583495</created>
@@ -587,10 +665,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48836000" />
+    <option name="totallyTimeSpent" value="50241000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="745" extended-state="0" />
+    <frame x="-1280" y="23" width="1280" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -655,20 +733,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/war/.settings/com.google.gdt.eclipse.core.prefs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/.settings/com.google.gwt.eclipse.core.prefs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/war/.settings/org.eclipse.wst.common.project.facet.core.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="150">
@@ -951,26 +1015,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="3345">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_PendingUsers.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49099836" vertical-offset="0" max-vertical-offset="3645">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_MyProfile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58919805" vertical-offset="0" max-vertical-offset="2355">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1025,8 +1073,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/war/LOGIN/LOGIN_Landing.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46644846" vertical-offset="0" max-vertical-offset="2355">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="2355">
           <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2816" max-vertical-offset="62820">
+          <caret line="203" column="7" selection-start-line="203" selection-start-column="1" selection-end-line="203" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/jquery/fullcalendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="91725">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_MyProfile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-108.125" vertical-offset="600" max-vertical-offset="4230">
+          <caret line="213" column="38" selection-start-line="213" selection-start-column="38" selection-end-line="213" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/ADMIN/ADMIN_Contacts.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23474178" vertical-offset="1605" max-vertical-offset="3345">
+          <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
           <folding />
         </state>
       </provider>
