@@ -13,13 +13,12 @@
 <head lang='en'>
   <meta charset='UTF-8'>
   <title>Rostr</title>
-  <link rel="icon" href="../assets/favicon.ico">
-  <link rel="icon" href="../assets/favicon.ico">
+  <link rel='icon' href='../assests/favicon.ico'>
   <link href='../css/bootstrap.min.css' rel='stylesheet'>
+  <link href='../css/login.css' rel='stylesheet'>
 
   <!-- Custom font for Rostr logo -->
   <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
-  <link href="../css/login.css">
   <!-- Font Awesome -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
