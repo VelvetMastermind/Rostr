@@ -19,6 +19,7 @@
 
   <!-- Custom font for Rostr logo -->
   <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+  <link href="../css/login.css">
   <!-- Font Awesome -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 

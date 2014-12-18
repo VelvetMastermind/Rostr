@@ -15,6 +15,7 @@
     <title>Rostr</title>
     <link rel="icon" href="../assets/favicon.ico">
     <link href='../css/bootstrap.min.css' rel='stylesheet'>
+    <link href="../css/login.css">
 
     <!-- Custom font for Rostr logo -->
     <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
