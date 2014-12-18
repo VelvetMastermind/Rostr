@@ -13,11 +13,8 @@
 <head lang='en'>
     <meta charset='UTF-8'>
     <title>Rostr</title>
-<<<<<<< Updated upstream
     <link rel="icon" href="../assets/favicon.ico">
-=======
     <link rel="icon" href="/../favicon.ico">
->>>>>>> Stashed changes
     <link href='../css/bootstrap.min.css' rel='stylesheet'>
     <link rel="icon" type="image/png" href="../assests/favicon.ico">
 

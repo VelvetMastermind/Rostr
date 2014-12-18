@@ -13,13 +13,9 @@
 <head lang='en'>
   <meta charset='UTF-8'>
   <title>Rostr</title>
-<<<<<<< Updated upstream
   <link rel="icon" href="../assets/favicon.ico">
-=======
-  <link rel="icon" href="../favicon.ico">
->>>>>>> Stashed changes
+  <link rel="icon" href="../assets/favicon.ico">
   <link href='../css/bootstrap.min.css' rel='stylesheet'>
-  <link rel="icon" type="image/png" href="/../assests/favicon.ico">
 
   <!-- Custom font for Rostr logo -->
   <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
