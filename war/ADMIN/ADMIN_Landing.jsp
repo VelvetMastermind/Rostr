@@ -8,6 +8,7 @@
 <%@ page import="com.velvetmastermind.rostr.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.google.appengine.api.datastore.PreparedQuery" %>
+<%@ page import="javax.servlet.http.Cookie"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +46,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <%
+                    DatastoreService datastore = rostrUtilities.getDatastore();
+                    Query gaeQuery = new Query("user");
+                    PreparedQuery pq = datastore.prepare(gaeQuery);
+                    List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
+                    String username = "username";
+
+                    Cookie[] cookies = request.getCookies();
+
+                    if (cookies != null) {
+                        for (Cookie c : cookies) {
+                            if (c.getName().equals("user")) {
+                                username = c.getValue();
+                            }
+                        }
+                    }
+                    String name = "hello";
+                    for(Entity person: list){
+                        if(person.getProperty("pantherID").equals(username)){
+                            name = (String) person.getProperty("fullName");
+                        }
+                    }
+                %>
                 <a class="navbar-brand" href="ADMIN_Landing.jsp">Rostr</a>
             </div>
             <div class="navbar-collapse collapse">
@@ -78,7 +102,7 @@
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <h1 class="sub-header text-center">Welcome, Admin</h1>
+                <h1 class="sub-header text-center"><%= name%></h1>
                 <div class="text-center">
                     <div class="row">
                         <form class="form-group" method="POST" action="ADMIN_Landing.jsp" id="actionButtons">
