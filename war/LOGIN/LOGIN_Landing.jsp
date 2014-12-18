@@ -13,7 +13,7 @@
 <head lang='en'>
     <meta charset='UTF-8'>
     <title>Rostr</title>
-    <link rel='icon' href='../assests/favicon.ico'>
+    <link rel="icon" href="../assets/favicon.ico">
     <link href='../css/bootstrap.min.css' rel='stylesheet'>
     <link href='../css/login.css' rel='stylesheet'>
 

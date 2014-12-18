@@ -2,6 +2,7 @@ package com.velvetmastermind.rostr;
 
 import java.io.IOException;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +24,7 @@ public class LoginServlet extends HttpServlet
 		//
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
+		String user = username; 
 
 		boolean foundError = false;
 		boolean userExists = false;
@@ -44,6 +46,9 @@ public class LoginServlet extends HttpServlet
 		}
 			
 		if (foundError || (rostrUtilities.getAccessLevel(username) != 0)) {
+			Cookie c = new Cookie("user", user);		
+			c.setMaxAge(60 * 60 * 24);
+			resp.addCookie(c);		
 			rostrUtilities.redirect(resp, "LOGIN/LOGIN_LandingERROR.jsp");
 		} 
 		else {

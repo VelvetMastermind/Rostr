@@ -13,7 +13,7 @@
 <head lang='en'>
   <meta charset='UTF-8'>
   <title>Rostr</title>
-  <link rel='icon' href='../assests/favicon.ico'>
+  <link rel="icon" href="../assets/favicon.ico">
   <link href='../css/bootstrap.min.css' rel='stylesheet'>
   <link href='../css/login.css' rel='stylesheet'>
 
@@ -24,6 +24,9 @@
 
 </head>
 <body>
+<audio autoplay>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
 <div class='container' style='margin-top:180px'>
   <h1 class='sub-header text-center rostrHeader'>Rostr</h1>
   <div class='col-md-4 col-md-offset-4'>
@@ -53,11 +56,11 @@
               <input type='password' class='form-control' id='password' name='password'
                      placeholder='Password' required autocomplete='on'>
             </div>
-            <!-- Forgot Password is not supported for Sprint 2
+            <!-- Forgot Password is not supported in Sprint 3
             <a href='#' class='pull-right small'>Forgot password?</a>
             -->
           </div>
-          <!--  Remember me is not supported for Sprint 2
+          <!--  Remember me is not supported for Sprint 3
           <div class='checkbox'>
               <label>
                   <input type='checkbox'> Remember Me

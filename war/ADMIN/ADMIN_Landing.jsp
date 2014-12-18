@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../assests/favicon.ico">
+    <link rel="icon" href="../assets/favicon.ico">
 
     <title>UWM - Dashboard</title>
 
@@ -53,10 +53,8 @@
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <!-- My Profile not supported in Sprint 2
-                            <li><a href="#">My Profile</a></li>
+                            <li><a href="ADMIN_MyProfile.jsp">My Profile</a></li>
                             <li class="divider"></li>
-                            -->
                             <li><a href="../LOGIN/LOGIN_Landing.jsp">Logout <span class="glyphicon glyphicon-off"></span></a></li>
                         </ul>
                     </li>
