@@ -16,7 +16,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+<<<<<<< Updated upstream
     <link rel="icon" href="../assets/favicon.ico">
+=======
+    <link rel="icon" type="image/png" href="/../assests/favicon.ico">
+>>>>>>> Stashed changes
 
     <title>UWM - Courses</title>
 
