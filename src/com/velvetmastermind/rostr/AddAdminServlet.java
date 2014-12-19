@@ -8,6 +8,7 @@
 package com.velvetmastermind.rostr;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +31,7 @@ public class AddAdminServlet extends HttpServlet
     {
     	try
     	{
+    		ArrayList<String> officeHours = new ArrayList<String>();
 	        String username = "admin";
 	        String password = "admin";
 	        int iAccessLevel = 1;
@@ -38,7 +40,7 @@ public class AddAdminServlet extends HttpServlet
 	        DatastoreService ds = rostrUtilities.getDatastore();
 	        Entity e = rostrUtilities.createEntity("user"); 
 
-	        createdAdmin = rostrUtilities.addUserToDatastore(e, username, "admin", password, "admin", "N/A", "N/A", "N/A", "THIS;THAT;THEM", iAccessLevel, ds); 
+	        createdAdmin = rostrUtilities.addUserToDatastore(e, username, "admin", password, "admin", "N/A", "N/A", "N/A", "THIS;THAT;THEM", officeHours,"N/A", iAccessLevel, ds); 
 	        if(iAccessLevel != -1 && iAccessLevel != 1 && iAccessLevel != 2 && iAccessLevel != 3) 
 	        {
 	        	createdAdmin = false;

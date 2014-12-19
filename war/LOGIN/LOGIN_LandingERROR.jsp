@@ -128,12 +128,21 @@
                                placeholder='Phone Number' pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" required>
                     </div>
                     <div class='form-group'>
-                        <label for='officeHours'>Office Hours</label>
-                        <input type='text' class='form-control' name='officeHours' id='officeHours'
-                               placeholder='Office Hours (separate by semi-colon)'>
-                        <label>
-                            <small>In format of : 2:00PM-3:00PM MWF;9:00AM-10:00AM TR</small>
-                        </label>
+                        <label for='officeHours'>Office Hours Begin</label>
+  						<input type="time" class='form-control' name="officeHoursBegin" id='officeHoursBegin'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='officeHours'>Office Hours End</label>
+  						<input type="time" class='form-control' name="officeHoursEnd" id='officeHoursEnd'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='officeDays'>Days Of The Week</label>
+                        <br>
+  						Monday <input type="checkbox" name="monday" value="monday">
+  						Tuesday <input type="checkbox" name="tuesday" value="tuesday">
+  						Wednesday <input type="checkbox" name="wednesday" value="wednesday">
+  						Thursday <input type="checkbox" name="thursday" value="thursday">
+  						Friday <input type="checkbox" name="friday" value="friday">
                     </div>
                     <input type='submit' class='btn btn-success btn-sm' value='Submit'/>
                 </form>

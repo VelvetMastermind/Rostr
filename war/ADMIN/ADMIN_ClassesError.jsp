@@ -85,7 +85,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="ADMIN_Landing.jsp">Dashboard</a></li>
                 <li>
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="ADMIN_MyProfile.jsp?pID=<%= currentUser.getProperty("pantherID")%>">My Profile</a></li>
                         <li class="divider"></li>

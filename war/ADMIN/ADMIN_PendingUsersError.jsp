@@ -9,6 +9,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.google.appengine.api.datastore.PreparedQuery" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Arrays" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +33,40 @@
   <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
 
 </head>
+<%
+  DatastoreService datastore = rostrUtilities.getDatastore();
+  Query gaeQuery = new Query("user");
+  PreparedQuery pq = datastore.prepare(gaeQuery);
+  List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
+  Entity currentUser = null;
+  String name = "";
+  Cookie userCookie = null;
 
+  Cookie[] cookies = request.getCookies();
+  ArrayList<Cookie> cooks = new ArrayList<Cookie>(Arrays.asList(cookies));
+
+  for(Cookie c: cooks)
+  {
+    if(c != null) {
+      if (c.getName().equals("Rostr")) {
+        userCookie = c;
+        break;
+      }
+    }
+  }
+  if(userCookie != null) {
+    for (Entity user : list) {
+      if (user.getProperty("username").toString().equals(userCookie.getValue())) {
+        name = user.getProperty("fullName").toString();
+        currentUser = user;
+        break;
+      }
+    }
+  }
+  else{
+    name = "Rostr'r";
+  }
+%>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">

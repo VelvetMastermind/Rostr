@@ -23,26 +23,44 @@ public class AddNewUserServlet extends HttpServlet
     {
     	try
     	{
-			ArrayList<String> errors = new ArrayList<>();
+			ArrayList<String> errors = new ArrayList<String>();
+			ArrayList<String> days = new ArrayList<String>();
 			String username = "";
 			String password = "";
 			String pantherID = "";
 			String roomNumber = "";
 			String phoneNumber = "";
 			String email = "";
-			String officeHours = "";
 			String skills = "";
+			String officeHoursBegin = "";
+			String officeHoursEnd = "";
+			String monday = "";
+			String tuesday = "";
+			String wednesday= "";
+			String thursday = "";
+			String friday = "";
 	        username = req.getParameter("fullName");
 	        password = req.getParameter("newPassword");
 	        pantherID = req.getParameter("pantherID");
 	        email = req.getParameter("email"); 
 	        roomNumber = req.getParameter("roomNumber");
 	        phoneNumber = req.getParameter("phoneNumber");
-	        officeHours = req.getParameter("officeHours");
 			skills = req.getParameter("skills");
+	        officeHoursBegin = req.getParameter("officeHoursBegin");
+	        officeHoursEnd = req.getParameter("officeHoursEnd");
+	        monday = req.getParameter("monday");
+	        tuesday = req.getParameter("tuesday");
+	        wednesday = req.getParameter("wednesday");
+	        thursday = req.getParameter("thursday");
+	        friday = req.getParameter("friday");
+	        days.add(monday);
+	        days.add(tuesday);
+	        days.add(wednesday);
+	        days.add(thursday);
+	        days.add(friday);
 	        int iAccessLevel = -1;
 	        boolean success = false;
-
+	        
 			if(username.length() == 0)
 				errors.add("Username is invalid!");
 			if(password.length() < 6 || password.length() > 20)
@@ -53,7 +71,7 @@ public class AddNewUserServlet extends HttpServlet
 	        DatastoreService ds = rostrUtilities.getDatastore();
 	        Entity e = rostrUtilities.createEntity("user");
 
-	        success = rostrUtilities.addUserToDatastore(e, username, email, password, pantherID, roomNumber, phoneNumber, officeHours, skills, iAccessLevel, ds);
+	        success = rostrUtilities.addUserToDatastore(e, username, email, password, pantherID, roomNumber, phoneNumber, officeHoursBegin, officeHoursEnd, days, skills, iAccessLevel, ds);
 	        if(success)
 	            rostrUtilities.redirect(resp, "LOGIN/LOGIN_addUserSuccess.jsp");
 	        else
