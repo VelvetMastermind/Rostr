@@ -9,6 +9,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.google.appengine.api.datastore.PreparedQuery" %>
 <%@ page import="javax.servlet.http.Cookie"%>
+<%@ page import="javax.servlet.*"%>
+<%@ page import="java.util.*" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +39,41 @@
 
 </head>
 
+<%
+    DatastoreService datastore = rostrUtilities.getDatastore();
+    Query gaeQuery = new Query("user");
+    PreparedQuery pq = datastore.prepare(gaeQuery);
+    List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
+    Entity currentUser = null;
+    String name = "";
+    Cookie userCookie = null;
+
+    Cookie[] cookies = request.getCookies();
+    ArrayList<Cookie> cooks = new ArrayList<Cookie>(Arrays.asList(cookies));
+
+    for(Cookie c: cooks)
+    {
+        if(c != null) {
+            if (c.getName().equals("Rostr")) {
+                userCookie = c;
+                break;
+            }
+        }
+    }
+    if(userCookie != null) {
+        for (Entity user : list) {
+            if (user.getProperty("username").toString().equals(userCookie.getValue())) {
+                name = user.getProperty("fullName").toString();
+                currentUser = user;
+                break;
+            }
+        }
+    }
+    else{
+        name = "Rostr'r";
+    }
+%>
+
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
@@ -46,29 +84,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <%
-                    DatastoreService datastore = rostrUtilities.getDatastore();
-                    Query gaeQuery = new Query("user");
-                    PreparedQuery pq = datastore.prepare(gaeQuery);
-                    List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
-                    String username = "username";
-
-                    Cookie[] cookies = request.getCookies();
-
-                    if (cookies != null) {
-                        for (Cookie c : cookies) {
-                            if (c.getName().equals("user")) {
-                                username = c.getValue();
-                            }
-                        }
-                    }
-                    String name = "hello";
-                    for(Entity person: list){
-                        if(person.getProperty("pantherID").equals(username)){
-                            name = (String) person.getProperty("fullName");
-                        }
-                    }
-                %>
                 <a class="navbar-brand" href="ADMIN_Landing.jsp">Rostr</a>
             </div>
             <div class="navbar-collapse collapse">
@@ -102,30 +117,38 @@
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <h1 class="sub-header text-center"><%= name%></h1>
+                <h1 class="sub-header text-center">Hello, <%= name%></h1>
                 <div class="text-center">
                     <div class="row">
                         <form class="form-group" method="POST" action="ADMIN_Landing.jsp" id="actionButtons">
-                            <button formaction="ADMIN_Classes.jsp"  class="btn btn-xlarge">Courses <span class="glyphicon glyphicon-th-list"></span> </button>
-                            <button formaction="ADMIN_Contacts.jsp"  class="btn btn-xlarge">Contacts <span class="glyphicon glyphicon-user"></span> </button>
-                            <button formaction="/doUpdateCourses" type="submit"  class="btn btn-xlarge">Update<br/>Courses<br/><span class="glyphicon glyphicon-retweet"></span></button>
-                            <button formaction="ADMIN_PendingUsers.jsp" class="btn btn-xlarge">Pending
-                                <br/>
-                                Users
-                                <br/>
-                                <span class="glyphicon glyphicon glyphicon-info-sign" data-target="#sendEmail"></span>
-                            </button>
-                            <a class="btn btn-xlarge" data-title="Email" data-toggle="modal" data-target="#sendEmail" data-placement="top" rel="tooltip">
-                                Email
-                                <br/>
-                                <span class="glyphicon glyphicon-envelope"></span>
-                            </a>
+                                <button formaction="ADMIN_Classes.jsp"  class="btn btn-xlarge">Courses <span class="glyphicon glyphicon-th-list"></span> </button>
+                                <button formaction="ADMIN_Contacts.jsp"  class="btn btn-xlarge">Contacts <span class="glyphicon glyphicon-user"></span> </button>
+                                <%
+                                    if(Integer.parseInt(currentUser.getProperty("accessLevel").toString()) == 0){ %>
+                                        <button formaction="/doUpdateCourses" type="submit"  class="btn btn-xlarge">Update<br/>Courses<br/><span class="glyphicon glyphicon-retweet"></span></button>
+                                        <button formaction="ADMIN_PendingUsers.jsp" class="btn btn-xlarge">Pending
+                                            <br/>
+                                            Users
+                                            <br/>
+                                            <span class="glyphicon glyphicon glyphicon-info-sign" data-target="#sendEmail"></span>
+                                        </button>
+                                        <a class="btn btn-xlarge" data-title="Email" data-toggle="modal" data-target="#sendEmail" data-placement="top" rel="tooltip">
+                                            Email
+                                            <br/>
+                                            <span class="glyphicon glyphicon-envelope"></span>
+                                        </a>
+                            <%}//end if
+
+                            %>
                         </form>
                     </div>
                 </div>
             </div>
 
         <!-- Processing Modal -->
+        <%
+            if(Integer.parseInt(currentUser.getProperty("accessLevel").toString()) == 0){
+        %>
         <div class="modal fade" id="sendEmail" tabindex="-1" role="dialog" aria-labelledby="sendEmail" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -155,6 +178,7 @@
                     </div>
                 </div>
             </div>
+            <% }//end if %>
         </div>
     </div>
 

@@ -8,6 +8,8 @@
 <%@ page import="com.velvetmastermind.rostr.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.google.appengine.api.datastore.PreparedQuery" %>
+<%@ page import="java.util.Arrays" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +33,40 @@
     <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
 
 </head>
+<%
+    DatastoreService datastore = rostrUtilities.getDatastore();
+    Query gaeQuery = new Query("user");
+    PreparedQuery pq = datastore.prepare(gaeQuery);
+    List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
+    Entity currentUser = null;
+    String name = "";
+    Cookie userCookie = null;
 
+    Cookie[] cookies = request.getCookies();
+    ArrayList<Cookie> cooks = new ArrayList<Cookie>(Arrays.asList(cookies));
+
+    for(Cookie c: cooks)
+    {
+        if(c != null) {
+            if (c.getName().equals("Rostr")) {
+                userCookie = c;
+                break;
+            }
+        }
+    }
+    if(userCookie != null) {
+        for (Entity user : list) {
+            if (user.getProperty("username").toString().equals(userCookie.getValue())) {
+                name = user.getProperty("fullName").toString();
+                currentUser = user;
+                break;
+            }
+        }
+    }
+    else{
+        name = "Rostr'r";
+    }
+%>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
@@ -50,10 +85,8 @@
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <!-- My Profile not supported in Sprint 2
                         <li><a href="#">My Profile</a></li>
                         <li class="divider"></li>
-                        -->
                         <li><a href="../LOGIN/LOGIN_Landing.jsp">Logout <span class="glyphicon glyphicon-off"></span></a></li>
                     </ul>
                 </li>
@@ -92,16 +125,18 @@
                             <th>Instructor</th>
                             <th>Room</th>
                             <th>Course Number</th>
+                            <% if(Integer.parseInt(currentUser.getProperty("accessLevel").toString()) == 0) { %>
                             <th>Edit</th>
                             <th>Delete</th>
+                            <% } %>
                         </tr>
                         </thead>
                         <tbody>
                         <%
-                            DatastoreService datastore = rostrUtilities.getDatastore();
-                        	Query gaeQuery = new Query("course");
-							PreparedQuery pq = datastore.prepare(gaeQuery);
-							List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
+                            datastore = rostrUtilities.getDatastore();
+                        	gaeQuery = new Query("course");
+							pq = datastore.prepare(gaeQuery);
+							list = pq.asList(FetchOptions.Builder.withDefaults());
 							for(Entity x : list){
                                 String className = (String)x.getProperty("className");
                                 String section = (String)x.getProperty("section");
@@ -127,8 +162,11 @@
                                 <td> <%= courseNumber%>
                                 </td>
                                 <!-- Edit/Delete Buttons -->
-                                <td><p><button class="btn btn-primary btn-xs" id='<%= courseNumber + "EDIT"%>' data-title="Edit" data-toggle="modal" data-target="#editCourse" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                <td><p><button class="btn btn-danger btn-xs" id='<%= courseNumber + "DELETE"%>' data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                        <% if(Integer.parseInt(currentUser.getProperty("accessLevel").toString()) == 0) { %>
+                                    <td><p><button class="btn btn-primary btn-xs" id='<%= courseNumber + "EDIT"%>' data-title="Edit" data-toggle="modal" data-target="#editCourse" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                    <td><p><button class="btn btn-danger btn-xs" id='<%= courseNumber + "DELETE"%>' data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                        <% } %>
+
                           <%  }
 						%>
                        <!-- NOT SUPPORTED IN SPRINT 2

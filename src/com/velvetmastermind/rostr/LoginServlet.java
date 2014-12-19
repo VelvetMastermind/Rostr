@@ -45,10 +45,7 @@ public class LoginServlet extends HttpServlet
 			System.out.println("Password is incorrect...");
 		}
 			
-		if (foundError || (rostrUtilities.getAccessLevel(username) != 0)) {
-			Cookie c = new Cookie("user", user);		
-			c.setMaxAge(60 * 60 * 24);
-			resp.addCookie(c);		
+		if (foundError) {		
 			rostrUtilities.redirect(resp, "LOGIN/LOGIN_LandingERROR.jsp");
 		} 
 		else {
@@ -56,6 +53,9 @@ public class LoginServlet extends HttpServlet
 			// TODO - Permissions handling
 			//
 			//if(permissions == 1 || 2 || etc....) then redirect correctly...
+			Cookie c = new Cookie("user", user);		
+			c.setMaxAge(60 * 60 * 24);
+			resp.addCookie(c);
 			rostrUtilities.redirect(resp, "ADMIN/ADMIN_Landing.jsp");
 		}
 	}
