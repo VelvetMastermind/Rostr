@@ -85,10 +85,8 @@
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <!-- My Profile not supported in Sprint 2
                         <li><a href="#">My Profile</a></li>
                         <li class="divider"></li>
-                        -->
                         <li><a href="../LOGIN/LOGIN_Landing.jsp">Logout <span
                                 class="glyphicon glyphicon-off"></span></a></li>
                     </ul>

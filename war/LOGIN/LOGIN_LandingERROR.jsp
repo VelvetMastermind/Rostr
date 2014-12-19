@@ -103,6 +103,10 @@
                         <input type='text' class='form-control' name='pantherID' id='pantherID' placeholder='PantherID'
                                required>
                     </div>
+                    <div class="form-group">
+                        <label for="skills">Skills</label>
+                        <input type="text" class="form-control" name="skills" id="skills" placeholder="Skills (Separate with semi-colon)" required>
+                    </div>
                     <div class='form-group'>
                         <label for='email'>Email</label>
                         <input type='email' class='form-control' name='email' id='email'

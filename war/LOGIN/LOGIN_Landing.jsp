@@ -102,6 +102,10 @@
                         <input type='text' class='form-control' name='pantherID' id='pantherID' placeholder='PantherID'
                                required>
                     </div>
+                    <div class="form-group">
+                        <label for="skills">Skills</label>
+                        <input type="text" class="form-control" name="skills" id="skills" placeholder="Skills (Separate with semi-colon)" required>
+                    </div>
                     <div class='form-group'>
                         <label for='email'>Email</label>
                         <input type='email' class='form-control' name='email' id='email'
@@ -125,7 +129,7 @@
                     <div class='form-group'>
                         <label for='officeHours'>Office Hours</label>
                         <input type='text' class='form-control' name='officeHours' id='officeHours'
-                               placeholder='Office Hours (separate by semi-colon)'>
+                               placeholder='Office Hours (separate by semi-colon)' required>
                         <label>
                             <small>In format of : 2:00PM-3:00PM MWF;9:00AM-10:00AM TR</small>
                         </label>

@@ -1,4 +1,8 @@
 <%@ page import="com.google.appengine.api.datastore.*" %>
+<%@ page import="com.velvetmastermind.rostr.rostrUtilities" %>
+<%@ page import="java.util.Arrays" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +23,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../css/dashboard.css" rel="stylesheet">
@@ -35,6 +40,41 @@
     <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
 
 </head>
+
+<%
+    DatastoreService datastore = rostrUtilities.getDatastore();
+    Query gaeQuery = new Query("user");
+    PreparedQuery pq = datastore.prepare(gaeQuery);
+    List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
+    Entity currentUser = null;
+    String name = "";
+    Cookie userCookie = null;
+
+    Cookie[] cookies = request.getCookies();
+    ArrayList<Cookie> cooks = new ArrayList<Cookie>(Arrays.asList(cookies));
+
+    for(Cookie c: cooks)
+    {
+        if(c != null) {
+            if (c.getName().equals("Rostr")) {
+                userCookie = c;
+                break;
+            }
+        }
+    }
+    if(userCookie != null) {
+        for (Entity user : list) {
+            if (user.getProperty("username").toString().equals(userCookie.getValue())) {
+                name = user.getProperty("fullName").toString();
+                currentUser = user;
+                break;
+            }
+        }
+    }
+    else{
+        name = "Rostr'r";
+    }
+%>
 
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -79,11 +119,84 @@
                 <li><a class="nav_item" href="ADMIN_Contacts.jsp">Contacts</a></li>
             </ul>
         </div>
+        <!-- PROFILE -->
+        <%
+            Entity myProfileUser = null;
+            String myProfileID = request.getParameter("pID");
+            if(myProfileID != null)
+            {
+            for (Entity user : list)
+                if (user.getProperty("username").toString().equals(myProfileID)) {
+                    myProfileUser = user;
+                }
+            }
+            else
+                myProfileUser = currentUser;
+
+        %>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+                    <div class="well profile">
+                        <div class="col-sm-12">
+                            <div class="col-xs-12 col-sm-8">
+                                <h2><%= myProfileUser.getProperty("fullName")%></h2>
+                                <p><strong>Email: </strong> <%= myProfileUser.getProperty("email")%> </p>
+                                <p><strong>Office Hours: </strong> <%= myProfileUser.getProperty("officeHours")%></p>
+                                <p><strong>Phone Number: </strong> <%= myProfileUser.getProperty("phoneNumber")%> </p>
+                                <p><strong>Room Number: </strong> <%= myProfileUser.getProperty("roomNumber")%></p>
+                                <p><strong>Skills: </strong>
+                                    <span class="tags">html5</span>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <figure>
+
+                                    <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 divider text-center">
+                            <div class="col-xs-12 col-sm-4 emphasis">
+                                <h2><strong> 20,7K </strong></h2>
+                                <p><small>Followers</small></p>
+                                <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 emphasis">
+                                <h2><strong>245</strong></h2>
+                                <p><small>Following</small></p>
+                                <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 emphasis">
+                                <h2><strong>43</strong></h2>
+                                <p><small>Snippets</small></p>
+                                <div class="btn-group dropup btn-block">
+                                    <button type="button" class="btn btn-primary"><span class="fa fa-gear"></span> Options </button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu text-left" role="menu">
+                                        <li><a href="#"><span class="fa fa-envelope pull-right"></span> Send an email </a></li>
+                                        <li><a href="#"><span class="fa fa-list pull-right"></span> Add or remove from a list  </a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#"><span class="fa fa-warning pull-right"></span>Report this user for spam</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" class="btn disabled" role="button"> Unfollow </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Profile -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="text-center">
                 <div class="row">
                     <div id="wrap">
-
+                        <!-- CALENDAR -->
                         <div id="calendar" class="fc fc-ltr">
                             <table class="fc-header" style="width:100%">
                                 <tbody>
@@ -214,7 +327,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div style="clear:both"></div>
                     </div>
                 </div>

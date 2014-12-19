@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet
 			// TODO - Permissions handling
 			//
 			//if(permissions == 1 || 2 || etc....) then redirect correctly...
-			Cookie c = new Cookie("user", user);		
+			Cookie c = new Cookie("Rostr", user);		
 			c.setMaxAge(60 * 60 * 24);
 			resp.addCookie(c);
 			rostrUtilities.redirect(resp, "ADMIN/ADMIN_Landing.jsp");
