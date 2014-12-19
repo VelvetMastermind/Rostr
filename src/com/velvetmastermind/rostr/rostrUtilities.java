@@ -1,6 +1,7 @@
 package com.velvetmastermind.rostr;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -180,7 +181,7 @@ public class rostrUtilities {
 	 * @return boolean whether or not the add was successful
 	 * @author Andrew Budziszek
 	 */
-	public static boolean addUserToDatastore(Entity e, String sFullName, String sEmail, String sPassword, String pantherID, String roomNumber, String phoneNumber, String officeHours, String skills, int iAccessLevel, DatastoreService ds) {
+	public static boolean addUserToDatastore(Entity e, String sFullName, String sEmail, String sPassword, String pantherID, String roomNumber, String phoneNumber, String officeHoursBegin, String officeHoursEnd, ArrayList<String> days, String skills, int iAccessLevel, DatastoreService ds) {
     	boolean bResult = false;
     	
     	try
@@ -205,8 +206,14 @@ public class rostrUtilities {
             e.setProperty("pantherID", pantherID);
             e.setProperty("roomNumber", roomNumber);
             e.setProperty("phoneNumber", phoneNumber);
-            e.setProperty("officeHours", officeHours); 
             e.setProperty("skills", skills); 
+            e.setProperty("officeHoursBegin", officeHoursBegin);
+            e.setProperty("officeHoursEnd", officeHoursEnd);
+            String dow = "";
+            for(String day: days){
+            	dow+= day + ";";
+            }
+            e.setProperty("days", dow);
             if(iAccessLevel != -1 && iAccessLevel != 1 && iAccessLevel != 2 && iAccessLevel != 3)
             	throw new IllegalStateException("Invalid access level!(" + iAccessLevel + ")");
             e.setProperty("accessLevel", iAccessLevel);

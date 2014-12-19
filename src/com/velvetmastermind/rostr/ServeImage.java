@@ -26,9 +26,9 @@ public class ServeImage extends HttpServlet {
 
         blobstoreService.serve(blobKey, res);
 
-        Datastore ds = new Datastore(req, res, new ArrayList<String>());
+        //Datastore ds = new Datastore(req, res, new ArrayList<String>());
 
-        ds.setImage(req.getParameter("blob-key"));
+        //ds.setImage(req.getParameter("blob-key"));
 
         if(req.getParameter("upload") != null){
 
