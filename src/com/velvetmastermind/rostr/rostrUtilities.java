@@ -174,6 +174,7 @@ public class rostrUtilities {
 	 * @param String roomNumber is the room/office number for the new user
 	 * @param String phoneNumber is the phone number of the new user
 	 * @param String officeHours is the office hours of the new user
+	 * @param String skills is the skills of the user
 	 * @param int iAccessLevel is the accesslevel of the new user
 	 * @param DatastoreService is the datastore in which the new user will be stored.
 	 * @return boolean whether or not the add was successful
@@ -205,6 +206,7 @@ public class rostrUtilities {
             e.setProperty("roomNumber", roomNumber);
             e.setProperty("phoneNumber", phoneNumber);
             e.setProperty("officeHours", officeHours); 
+            e.setProperty("skills", skills); 
             if(iAccessLevel != -1 && iAccessLevel != 1 && iAccessLevel != 2 && iAccessLevel != 3)
             	throw new IllegalStateException("Invalid access level!(" + iAccessLevel + ")");
             e.setProperty("accessLevel", iAccessLevel);

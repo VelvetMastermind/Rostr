@@ -3,6 +3,9 @@
 <%@ page import="java.util.Arrays" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.google.appengine.api.blobstore.BlobstoreService" %>
+<%@ page import="com.google.appengine.api.blobstore.BlobstoreServiceFactory" %>
+<%@ page import="com.google.appengine.api.blobstore.BlobKey" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,7 +137,7 @@
                 myProfileUser = currentUser;
 
         %>
-        <div class="container">
+        <div class=" fc fc-ltr">
             <div class="row">
                 <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
                     <div class="well profile">
@@ -155,37 +158,11 @@
                                 <figure>
                                     <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
                                 </figure>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 divider text-center">
-                            <div class="col-xs-12 col-sm-4 emphasis">
-                                <h2><strong> 20,7K </strong></h2>
-                                <p><small>Followers</small></p>
-                                <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
-                            </div>
-                            <div class="col-xs-12 col-sm-4 emphasis">
-                                <h2><strong>245</strong></h2>
-                                <p><small>Following</small></p>
-                                <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
-                            </div>
-                            <div class="col-xs-12 col-sm-4 emphasis">
-                                <h2><strong>43</strong></h2>
-                                <p><small>Snippets</small></p>
-                                <div class="btn-group dropup btn-block">
-                                    <button type="button" class="btn btn-primary"><span class="fa fa-gear"></span> Options </button>
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                        <span class="caret"></span>
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <ul class="dropdown-menu text-left" role="menu">
-                                        <li><a href="#"><span class="fa fa-envelope pull-right"></span> Send an email </a></li>
-                                        <li><a href="#"><span class="fa fa-list pull-right"></span> Add or remove from a list  </a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#"><span class="fa fa-warning pull-right"></span>Report this user for spam</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#" class="btn disabled" role="button"> Unfollow </a></li>
-                                    </ul>
-                                </div>
+                                <% if(currentUser == myProfileUser) {%>
+                                    <form method="POST" action="" id="imgUpload">
+                                        <input type="file" id="imgUploaded" name="myFile" value="Upload Photo">
+                                    </form>
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -379,6 +356,11 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="../../dist/js/bootstrap.min.js"></script>
 <script src="../js/docs.min.js"></script>
+<script>
+    document.getElementById("imgUploaded").onchange = function() {
+        document.getElementById("imgUpload").submit();
+    }
+</script>
 <!-- Sortable JS -->
 <script src="../js/sorttable.js"></script>
 <!-- Calendar JS -->
