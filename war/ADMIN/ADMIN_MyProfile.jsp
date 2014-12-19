@@ -144,6 +144,7 @@
                         <div class="col-sm-12">
                             <div class="col-xs-12 col-sm-8">
                                 <h2><%= myProfileUser.getProperty("fullName")%></h2>
+                                <button class='btn btn-primary btn-xs' data-title='Edit Profile' data-toggle='modal' data-target='#editProfile' data-placement='top' rel='tooltip'>Edit Profile</button>
                                 <p><strong>Email: </strong> <%= myProfileUser.getProperty("email")%> </p>
                                 <p><strong>Office Hours: </strong> <%= myProfileUser.getProperty("officeHours")%></p>
                                 <p><strong>Phone Number: </strong> <%= myProfileUser.getProperty("phoneNumber")%> </p>
@@ -349,17 +350,128 @@
     </div>
 </div>
 
+<!-- New User Modal -->
+<div class='modal fade' id='editProfile' tabindex='-1' role='dialog' aria-labelledby='editProfile' aria-hidden='true'>
+    <div class='modal-dialog'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>&times;</span><span
+                        class='sr-only'>Close</span></button>
+                <h4 class='modal-title' id='myModalLabel'>Edit Your Profile</h4>
+            </div>
+            <div class='modal-body'>
+                <form role='form' method='POST' action='/doEditProfile'>
+                    <div class='form-group'>
+                        <label for='fullName'>Full Name</label>
+                        <input type='text' class='form-control' name='fullName' id='fullName' placeholder='<%= myProfileUser.getProperty("fullName")%>'
+                               value="<%= myProfileUser.getProperty("fullName")%>" required>
+                    </div>
+                    <div class='form-group'>
+                        <label for='pantherID'>PantherID <label class='small'> </label></label>
+                        <input type='text' class='form-control' name='pantherID' id='pantherID' placeholder='<%= myProfileUser.getProperty("pantherID")%>' value="<%= myProfileUser.getProperty("pantherID")%>"
+                               readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="skills">Skills</label>
+                        <input type="text" class="form-control" name="skills" id="skills" placeholder="<%= myProfileUser.getProperty("skills")%>" value="<%= myProfileUser.getProperty("skills")%>" required>
+                    </div>
+                    <div class='form-group'>
+                        <label for='email'>Email</label>
+                        <input type='email' class='form-control' name='email' id='email'
+                               placeholder='<%= myProfileUser.getProperty("email")%>' value="<%= myProfileUser.getProperty("email")%>" required>
+                    </div>
+                    <div class='form-group'>
+                        <label for='roomNumber'>Office Number</label>
+                        <input type='text' class='form-control' name='roomNumber' id='roomNumber'
+                               placeholder='<%= myProfileUser.getProperty("officeNumber")%>' value="<%= myProfileUser.getProperty("roomNumber") %>" required>
+                    </div>
+                    <div class='form-group'>
+                        <label for='phoneNumber'>Phone Number</label>
+                        <input type='tel' class='form-control' name='phoneNumber' id='phoneNumber'
+                               placeholder='<%= myProfileUser.getProperty("phoneNumber")%>' value="<%= myProfileUser.getProperty("phoneNumber")%>"required>
+                    </div>
+                    <div class='form-group'>
+                        <label for='officeHours'>Office Hours Begin</label>
+                        <input type="time" class='form-control' name="officeHoursBegin" id='officeHoursBegin'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='officeHours'>Office Hours End</label>
+                        <input type="time" class='form-control' name="officeHoursEnd" id='officeHoursEnd'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='officeDays'>Days Of The Week</label>
+                        <br>
+                        Monday <input type="checkbox" name="monday" value="monday">
+                        Tuesday <input type="checkbox" name="tuesday" value="tuesday">
+                        Wednesday <input type="checkbox" name="wednesday" value="wednesday">
+                        Thursday <input type="checkbox" name="thursday" value="thursday">
+                        Friday <input type="checkbox" name="friday" value="friday">
+                    </div>
+                    <input type='submit' class='btn btn-success btn-sm' value='Submit'/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm" id="editProfileSuccess" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="alert alert-success">
+                <br/>
+                <span class="glyphicon glyphicon glyphicon-ok"></span> Success! Profile updated.
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm" id="editProfileError" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="alert alert-danger">
+                <br/>
+                <span class="glyphicon glyphicon-warning-sign"></span> Oops! Something went wrong...
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="../../dist/js/bootstrap.min.js"></script>
+<script src="..sdf/js/bootstrap.min.js"></script>
 <script src="../js/docs.min.js"></script>
 <script>
     document.getElementById("imgUploaded").onchange = function() {
         document.getElementById("imgUpload").submit();
     }
+</script>
+<script>
+
+    var success = getQueryVariable("success");
+
+    if(success === "yes"){
+        $('#editProfileSuccess').modal('show');
+    }
+    else if(success === "no")
+    {
+        $('#editProfileError').modal('show');
+    }
+
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+}
 </script>
 <!-- Sortable JS -->
 <script src="../js/sorttable.js"></script>

@@ -214,10 +214,8 @@ public class rostrUtilities {
             	dow+= day + ";";
             }
             e.setProperty("days", dow);
-            if(iAccessLevel != -1 && iAccessLevel != 1 && iAccessLevel != 2 && iAccessLevel != 3)
-            	throw new IllegalStateException("Invalid access level!(" + iAccessLevel + ")");
             e.setProperty("accessLevel", iAccessLevel);
-            ds.put(e);
+            getDatastore().put(e);
             bResult = true;
     	}
     	catch(Exception ex) 

@@ -129,10 +129,10 @@
             </thead>
             <tbody>
             <%
-              DatastoreService datastore = rostrUtilities.getDatastore();
-              Query gaeQuery = new Query("user");
-              PreparedQuery pq = datastore.prepare(gaeQuery);
-              List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());
+              datastore = rostrUtilities.getDatastore();
+              gaeQuery = new Query("user");
+               pq = datastore.prepare(gaeQuery);
+              list = pq.asList(FetchOptions.Builder.withDefaults());
               ArrayList<Entity> visible = new ArrayList<Entity>();
               for(Entity x : list)
               {
