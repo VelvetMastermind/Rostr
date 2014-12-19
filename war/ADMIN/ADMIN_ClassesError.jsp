@@ -85,12 +85,10 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="ADMIN_Landing.jsp">Dashboard</a></li>
                 <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <!-- My Profile not supported in Sprint 2
-                        <li><a href="#">My Profile</a></li>
+                        <li><a href="ADMIN_MyProfile.jsp?pID=<%= currentUser.getProperty("pantherID")%>">My Profile</a></li>
                         <li class="divider"></li>
-                        -->
                         <li><a href="../LOGIN/LOGIN_Landing.jsp">Logout <span class="glyphicon glyphicon-off"></span></a></li>
                     </ul>
                 </li>
