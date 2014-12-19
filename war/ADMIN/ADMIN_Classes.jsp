@@ -85,7 +85,7 @@
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">My Profile</a></li>
+                        <li><a href="ADMIN_MyProfile.jsp?pID=<%= currentUser.getProperty("pantherID")%>">My Profile</a></li>
                         <li class="divider"></li>
                         <li><a href="../LOGIN/LOGIN_Landing.jsp">Logout <span class="glyphicon glyphicon-off"></span></a></li>
                     </ul>
@@ -163,13 +163,13 @@
                                 </td>
                                 <!-- Edit/Delete Buttons -->
                                         <% if(Integer.parseInt(currentUser.getProperty("accessLevel").toString()) == 0) { %>
-                                    <td><p><button class="btn btn-primary btn-xs" id='<%= courseNumber + "EDIT"%>' data-title="Edit" data-toggle="modal" data-target="#editCourse" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                    <td><p><button class="btn btn-danger btn-xs" id='<%= courseNumber + "DELETE"%>' data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                            <td><p><button class="btn btn-primary btn-xs" id='<%= courseNumber + "EDIT"%>' data-title="Edit" data-toggle="modal" data-target="#editCourse" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                            <td><p><button class="btn btn-danger btn-xs" id='<%= courseNumber + "DELETE"%>' data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
                                         <% } %>
 
                           <%  }
 						%>
-                       <!-- NOT SUPPORTED IN SPRINT 2
+                       <!-- NOT SUPPORTED IN SPRINT 3
                        <tr class="add_class">
                             <td><a href="#" class="add_class" data-toggle="modal" data-target="#myModal">ADD CLASS <span class="glyphicon glyphicon-plus"></span> </a></td>
                             <td></td>
@@ -228,7 +228,7 @@
                         <input type="text" class="form-control" name="assignUnits" id="assignUnits" placeholder="3">
                     </div>
                     <div class="form-group">
-                        <label for="assignCourseNumber">Course Number</label>
+                        <label for="assignNumber">Course Number</label>
                         <input type="text" class="form-control" name="assignNumber" id="assignNumber" placeholder="40581">
                     </div>
                     <div class="modal-footer">

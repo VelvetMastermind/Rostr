@@ -13,6 +13,14 @@ html {
 
 }
 
+#myProfLinks a{
+    color: #000000;
+}
+
+#myProfLinks a:hover{
+    text-decoration: underline;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 body
 {
