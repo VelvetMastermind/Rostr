@@ -145,7 +145,7 @@
                                 String email = (String)x.getProperty("email");
                                 if(fullName != null){
                         %>
-                        <tr><td> <%= fullName%>
+                        <tr><td> <a href="ADMIN_MyProfile.jsp?pID=<%= pantherID%>" style="color:#000000"><%= fullName%></a>
                         </td>
                             <td> <%= pantherID%>
                             </td>
