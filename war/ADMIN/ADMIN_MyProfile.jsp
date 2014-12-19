@@ -146,12 +146,13 @@
                                 <p><strong>Phone Number: </strong> <%= myProfileUser.getProperty("phoneNumber")%> </p>
                                 <p><strong>Room Number: </strong> <%= myProfileUser.getProperty("roomNumber")%></p>
                                 <p><strong>Skills: </strong>
-                                    <span class="tags">html5</span>
+                                    <% for(String skill : myProfileUser.getProperty("skills").toString().split(";")) {%>
+                                        <span class="tags"><%= skill %></span>
+                                    <%}%>
                                 </p>
                             </div>
                             <div class="col-xs-12 col-sm-4 text-center">
                                 <figure>
-
                                     <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
                                 </figure>
                             </div>

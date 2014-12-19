@@ -179,7 +179,7 @@ public class rostrUtilities {
 	 * @return boolean whether or not the add was successful
 	 * @author Andrew Budziszek
 	 */
-	public static boolean addUserToDatastore(Entity e, String sFullName, String sEmail, String sPassword, String pantherID, String roomNumber, String phoneNumber, String officeHours, int iAccessLevel, DatastoreService ds) {
+	public static boolean addUserToDatastore(Entity e, String sFullName, String sEmail, String sPassword, String pantherID, String roomNumber, String phoneNumber, String officeHours, String skills, int iAccessLevel, DatastoreService ds) {
     	boolean bResult = false;
     	
     	try

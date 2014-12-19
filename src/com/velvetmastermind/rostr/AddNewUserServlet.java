@@ -31,6 +31,7 @@ public class AddNewUserServlet extends HttpServlet
 			String phoneNumber = "";
 			String email = "";
 			String officeHours = "";
+			String skills = "";
 	        username = req.getParameter("fullName");
 	        password = req.getParameter("newPassword");
 	        pantherID = req.getParameter("pantherID");
@@ -38,6 +39,7 @@ public class AddNewUserServlet extends HttpServlet
 	        roomNumber = req.getParameter("roomNumber");
 	        phoneNumber = req.getParameter("phoneNumber");
 	        officeHours = req.getParameter("officeHours");
+			skills = req.getParameter("skills");
 	        int iAccessLevel = -1;
 	        boolean success = false;
 
@@ -51,7 +53,7 @@ public class AddNewUserServlet extends HttpServlet
 	        DatastoreService ds = rostrUtilities.getDatastore();
 	        Entity e = rostrUtilities.createEntity("user");
 
-	        success = rostrUtilities.addUserToDatastore(e, username, email, password, pantherID, roomNumber, phoneNumber, officeHours, iAccessLevel, ds);
+	        success = rostrUtilities.addUserToDatastore(e, username, email, password, pantherID, roomNumber, phoneNumber, officeHours, skills, iAccessLevel, ds);
 	        if(success)
 	            rostrUtilities.redirect(resp, "LOGIN/LOGIN_addUserSuccess.jsp");
 	        else
