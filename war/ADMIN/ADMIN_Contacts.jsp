@@ -87,7 +87,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="ADMIN_MyProfile.jsp?pID=<%= currentUser.getProperty("pantherID")%>">My Profile</a></li>
                         <li class="divider"></li>
-                        <li><a href="../LOGIN/LOGIN_Landing.jsp">Logout <span class="glyphicon glyphicon-off"></span></a></li>
+                        <li><a href="javascript: logout()">Logout<span class="glyphicon glyphicon-off"></span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -235,6 +235,8 @@
         </div>
     </div>
 </div>
+<form action="/logout" method="POST" name="logout"></form>
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -242,6 +244,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="../../dist/js/bootstrap.min.js"></script>
+<script>
+    function logout()
+    {
+        document.logout.submit();
+    }
+</script>
 <script src="../../assets/js/docs.min.js"></script>
 <!-- Sortable JS -->
 <script src="../js/sorttable.js"></script>

@@ -94,6 +94,7 @@ public class EditProfile extends HttpServlet
                     break;
                 }
             }
+            datastore = rostrUtilities.getDatastore();
             if(currentUser != null) {
                 if(rostrUtilities.addUserToDatastore(currentUser, username, email, currentUser.getProperty("password").toString(), pantherID, roomNumber, phoneNumber, officeHoursBegin, officeHoursEnd, days, skills, Integer.parseInt(currentUser.getProperty("accessLevel").toString()), rostrUtilities.getDatastore()))
                     success = true;

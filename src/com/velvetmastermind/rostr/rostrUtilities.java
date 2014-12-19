@@ -215,6 +215,13 @@ public class rostrUtilities {
             }
             e.setProperty("days", dow);
             e.setProperty("accessLevel", iAccessLevel);
+			String daysString = "";
+			for(String day: days){
+				if(day != null)
+					daysString += Character.toString(day.charAt(0)).toUpperCase();
+			}
+			String officeHours = officeHoursBegin + " - " + officeHoursEnd + " " + daysString;
+			e.setProperty("officeHours", officeHours);
             getDatastore().put(e);
             bResult = true;
     	}
